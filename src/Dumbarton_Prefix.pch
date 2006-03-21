@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Dumbarton' target in the 'Dumbarton' project.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

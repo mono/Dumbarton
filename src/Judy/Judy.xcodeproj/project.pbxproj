@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildStyle section */
+		014CEA520018CE5811CA2923 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		014CEA530018CE5811CA2923 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXFileReference section */
+		9D12EABA08CE423200C6653E /* JudyByCount.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyByCount.c; sourceTree = "<group>"; };
+		9D12EABB08CE423200C6653E /* JudyCascade.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyCascade.c; sourceTree = "<group>"; };
+		9D12EABC08CE423200C6653E /* JudyCount.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyCount.c; sourceTree = "<group>"; };
+		9D12EABD08CE423200C6653E /* JudyCreateBranch.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyCreateBranch.c; sourceTree = "<group>"; };
+		9D12EABE08CE423200C6653E /* JudyDecascade.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyDecascade.c; sourceTree = "<group>"; };
+		9D12EABF08CE423200C6653E /* JudyDel.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyDel.c; sourceTree = "<group>"; };
+		9D12EAC008CE423200C6653E /* JudyFirst.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyFirst.c; sourceTree = "<group>"; };
+		9D12EAC108CE423200C6653E /* JudyFreeArray.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyFreeArray.c; sourceTree = "<group>"; };
+		9D12EAC208CE423200C6653E /* JudyGet.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyGet.c; sourceTree = "<group>"; };
+		9D12EAC308CE423200C6653E /* JudyIns.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyIns.c; sourceTree = "<group>"; };
+		9D12EAC408CE423200C6653E /* JudyInsArray.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyInsArray.c; sourceTree = "<group>"; };
+		9D12EAC508CE423200C6653E /* JudyInsertBranch.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyInsertBranch.c; sourceTree = "<group>"; };
+		9D12EAC608CE423200C6653E /* JudyMalloc.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyMalloc.c; sourceTree = "<group>"; };
+		9D12EAC708CE423200C6653E /* JudyMallocIF.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyMallocIF.c; sourceTree = "<group>"; };
+		9D12EAC808CE423200C6653E /* JudyMemActive.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyMemActive.c; sourceTree = "<group>"; };
+		9D12EAC908CE423200C6653E /* JudyMemUsed.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyMemUsed.c; sourceTree = "<group>"; };
+		9D12EACA08CE423200C6653E /* JudyPrevNext.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyPrevNext.c; sourceTree = "<group>"; };
+		9D12EACB08CE423200C6653E /* JudyPrevNextEmpty.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyPrevNextEmpty.c; sourceTree = "<group>"; };
+		9D12EACC08CE423200C6653E /* JudyPrintJP.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyPrintJP.c; sourceTree = "<group>"; };
+		9D12EACD08CE423200C6653E /* JudyPrivate.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = JudyPrivate.h; sourceTree = "<group>"; };
+		9D12EACE08CE423200C6653E /* JudyPrivate1L.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = JudyPrivate1L.h; sourceTree = "<group>"; };
+		9D12EACF08CE423200C6653E /* JudyPrivateBranch.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = JudyPrivateBranch.h; sourceTree = "<group>"; };
+		9D12EAD008CE423200C6653E /* JudyTables.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyTables.c; sourceTree = "<group>"; };
+		9D12EAEF08CE432A00C6653E /* Judy.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Judy.h; sourceTree = "<group>"; };
+		9D12EAF208CE436B00C6653E /* Judy1.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = Judy1.h; sourceTree = "<group>"; };
+		9D12EAF708CE43BB00C6653E /* JudyHS.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudyHS.c; sourceTree = "<group>"; };
+		9D12EAF808CE43BB00C6653E /* JudyHS.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = JudyHS.h; sourceTree = "<group>"; };
+		9D12EAFE08CE43D700C6653E /* JudyL.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = JudyL.h; sourceTree = "<group>"; };
+		9D12EB0308CE43F200C6653E /* JudySL.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudySL.c; sourceTree = "<group>"; };
+		9DA4F0DD08CE6802008EE9FB /* libJudy.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libJudy.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DA4F60208CE83CD008EE9FB /* libJudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJudy.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* Judy */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* src */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = Judy;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				9D12EB0008CE43DC00C6653E /* JudySL */,
+				9D12EAFB08CE43BF00C6653E /* JudyL */,
+				9D12EAF408CE439F00C6653E /* JudyHS */,
+				9D12EAF108CE434F00C6653E /* Judy1 */,
+				9D12EAB708CE421200C6653E /* JudyCommon */,
+				9D12EAEF08CE432A00C6653E /* Judy.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DA4F0DD08CE6802008EE9FB /* libJudy.dylib */,
+				9DA4F60208CE83CD008EE9FB /* libJudy.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D12EAB708CE421200C6653E /* JudyCommon */ = {
+			isa = PBXGroup;
+			children = (
+				9D12EABA08CE423200C6653E /* JudyByCount.c */,
+				9D12EABB08CE423200C6653E /* JudyCascade.c */,
+				9D12EABC08CE423200C6653E /* JudyCount.c */,
+				9D12EABD08CE423200C6653E /* JudyCreateBranch.c */,
+				9D12EABE08CE423200C6653E /* JudyDecascade.c */,
+				9D12EABF08CE423200C6653E /* JudyDel.c */,
+				9D12EAC008CE423200C6653E /* JudyFirst.c */,
+				9D12EAC108CE423200C6653E /* JudyFreeArray.c */,
+				9D12EAC208CE423200C6653E /* JudyGet.c */,
+				9D12EAC308CE423200C6653E /* JudyIns.c */,
+				9D12EAC408CE423200C6653E /* JudyInsArray.c */,
+				9D12EAC508CE423200C6653E /* JudyInsertBranch.c */,
+				9D12EAC608CE423200C6653E /* JudyMalloc.c */,
+				9D12EAC708CE423200C6653E /* JudyMallocIF.c */,
+				9D12EAC808CE423200C6653E /* JudyMemActive.c */,
+				9D12EAC908CE423200C6653E /* JudyMemUsed.c */,
+				9D12EACA08CE423200C6653E /* JudyPrevNext.c */,
+				9D12EACB08CE423200C6653E /* JudyPrevNextEmpty.c */,
+				9D12EACC08CE423200C6653E /* JudyPrintJP.c */,
+				9D12EACD08CE423200C6653E /* JudyPrivate.h */,
+				9D12EACE08CE423200C6653E /* JudyPrivate1L.h */,
+				9D12EACF08CE423200C6653E /* JudyPrivateBranch.h */,
+				9D12EAD008CE423200C6653E /* JudyTables.c */,
+			);
+			path = JudyCommon;
+			sourceTree = "<group>";
+		};
+		9D12EAF108CE434F00C6653E /* Judy1 */ = {
+			isa = PBXGroup;
+			children = (
+				9D12EAF208CE436B00C6653E /* Judy1.h */,
+			);
+			path = Judy1;
+			sourceTree = "<group>";
+		};
+		9D12EAF408CE439F00C6653E /* JudyHS */ = {
+			isa = PBXGroup;
+			children = (
+				9D12EAF708CE43BB00C6653E /* JudyHS.c */,
+				9D12EAF808CE43BB00C6653E /* JudyHS.h */,
+			);
+			path = JudyHS;
+			sourceTree = "<group>";
+		};
+		9D12EAFB08CE43BF00C6653E /* JudyL */ = {
+			isa = PBXGroup;
+			children = (
+				9D12EAFE08CE43D700C6653E /* JudyL.h */,
+			);
+			path = JudyL;
+			sourceTree = "<group>";
+		};
+		9D12EB0008CE43DC00C6653E /* JudySL */ = {
+			isa = PBXGroup;
+			children = (
+				9D12EB0308CE43F200C6653E /* JudySL.c */,
+			);
+			path = JudySL;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9DA4F0DC08CE6802008EE9FB /* libJudy.dylib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DA4F0DE08CE6820008EE9FB /* Build configuration list for PBXNativeTarget "libJudy.dylib" */;
+			buildPhases = (
+				934F35080916B5ED00C16C20 /* make Judy */,
+				933BD2E90916D26800236BCF /* Change install_name */,
+				9DA4F0E208CE682B008EE9FB /* Copy to BUILT_PRODUCTS_DIR */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_STYLE = DYNAMIC;
+				OPTIMIZATION_CFLAGS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = Judy;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			dependencies = (
+			);
+			name = libJudy.dylib;
+			productName = Judy;
+			productReference = 9DA4F0DD08CE6802008EE9FB /* libJudy.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		9DA4F60108CE83CD008EE9FB /* libJudy.a */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DA4F60D08CE841C008EE9FB /* Build configuration list for PBXNativeTarget "libJudy.a" */;
+			buildPhases = (
+				9DC576EB08CF751F00897270 /* make Judy */,
+				9DA4F60508CE83FE008EE9FB /* Copy to BUILT_PRODUCTS_DIR */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = "$(HOME)/lib";
+				LIBRARY_STYLE = STATIC;
+				OPTIMIZATION_CFLAGS = "";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PREBINDING = NO;
+				PRODUCT_NAME = libJudy.a;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			dependencies = (
+			);
+			name = libJudy.a;
+			productName = libJudy.a;
+			productReference = 9DA4F60208CE83CD008EE9FB /* libJudy.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 9D12EAB108CE420700C6653E /* Build configuration list for PBXProject "Judy" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				014CEA520018CE5811CA2923 /* Debug */,
+				014CEA530018CE5811CA2923 /* Release */,
+			);
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* Judy */;
+			projectDirPath = "";
+			targets = (
+				9DA4F0DC08CE6802008EE9FB /* libJudy.dylib */,
+				9DA4F60108CE83CD008EE9FB /* libJudy.a */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		933BD2E90916D26800236BCF /* Change install_name */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Change install_name";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$TARGET_TEMP_DIR/src\"\ninstall_name_tool -id @executable_path/../Libraries/libJudy.dylib src/obj/.libs/libJudy.dylib";
+		};
+		934F35080916B5ED00C16C20 /* make Judy */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "make Judy";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -x\ncd \"$PROJECT_DIR\"\n\nproduct=\"$TARGET_TEMP_DIR/$TARGET_NAME.stamp\"\n\n# logic to determine whether to build; this is crapp-ay\nif [ -f \"$product\" ]\nthen\n\tfind_output=`find \"$PROJECT_DIR\"/src -maxdepth 3 -type f -newer \"$product\" ! -regex '.*\\.svn.*'`\n\n\tif [ \"x$find_output\" == \"x\" ]\n\tthen\n\t\techo \"Short circuiting build, looks like nothing's changed.\"\n\t\texit 0\n\tfi\nfi\n\nmkdir -p \"$TARGET_TEMP_DIR\"\nrsync -avv --exclude=.svn \"$PROJECT_DIR\" \"$TARGET_TEMP_DIR\"\ncd \"$TARGET_TEMP_DIR/Judy\"\nexport CFLAGS=\"$OTHER_CFLAGS\"\n./configure --enable-32-bit\nmake && touch \"$product\"\n\nmkdir -p \"$BUILT_PRODUCTS_DIR\"\nexit 0";
+		};
+		9DA4F0E208CE682B008EE9FB /* Copy to BUILT_PRODUCTS_DIR */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy to BUILT_PRODUCTS_DIR";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$TARGET_TEMP_DIR/Judy\"\ncp -p src/obj/.libs/libJudy.dylib \"$BUILT_PRODUCTS_DIR\"\n";
+		};
+		9DA4F60508CE83FE008EE9FB /* Copy to BUILT_PRODUCTS_DIR */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy to BUILT_PRODUCTS_DIR";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$TARGET_TEMP_DIR/Judy\"\ncp -p src/obj/.libs/libJudy.a \"$BUILT_PRODUCTS_DIR\"\n";
+		};
+		9DC576EB08CF751F00897270 /* make Judy */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "make Judy";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -x\ncd \"$PROJECT_DIR\"\n\nproduct=\"$TARGET_TEMP_DIR/$TARGET_NAME.stamp\"\n\n# logic to determine whether to build; this is crapp-ay\nif [ -f \"$product\" ]\nthen\n\tfind_output=`find \"$PROJECT_DIR\"/src -maxdepth 3 -type f -newer \"$product\" ! -regex '.*\\.svn.*'`\n\n\tif [ \"x$find_output\" == \"x\" ]\n\tthen\n\t\techo \"Short circuiting build, looks like nothing's changed.\"\n\t\texit 0\n\tfi\nfi\n\nmkdir -p \"$TARGET_TEMP_DIR\"\nrsync -avv --exclude=.svn \"$PROJECT_DIR\" \"$TARGET_TEMP_DIR\"\ncd \"$TARGET_TEMP_DIR/Judy\"\nexport CFLAGS=\"$OTHER_CFLAGS\"\n./configure --enable-32-bit\nmake && touch \"$product\"\n\nmkdir -p \"$BUILT_PRODUCTS_DIR\"\nexit 0";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		9D12EAB208CE420700C6653E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DEBUGGING_SYMBOLS = full;
+				INSTALL_PATH = "@executable_path/../Libraries";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = (
+					"-g",
+					"-O2",
+					"-mtune=G5",
+				);
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SKIP_INSTALL = YES;
+				SYMROOT = build;
+			};
+			name = Debug;
+		};
+		9D12EAB308CE420700C6653E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					ppc,
+					i386,
+				);
+				GCC_DEBUGGING_SYMBOLS = full;
+				INSTALL_PATH = "@executable_path/../Libraries";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = (
+					"-g",
+					"-O2",
+					"-mtune=G5",
+				);
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		9D12EAB408CE420700C6653E /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_DEBUGGING_SYMBOLS = full;
+				INSTALL_PATH = "@executable_path/../Libraries";
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = (
+					"-g",
+					"-O2",
+					"-mtune=G5",
+				);
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SKIP_INSTALL = YES;
+			};
+			name = Default;
+		};
+		9DA4F0DF08CE6820008EE9FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = libJudy;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		9DA4F0E008CE6820008EE9FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = libJudy;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		9DA4F0E108CE6820008EE9FB /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				LIBRARY_STYLE = DYNAMIC;
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_NAME = libJudy;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Default;
+		};
+		9DA4F60E08CE841C008EE9FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_STYLE = STATIC;
+				PRODUCT_NAME = Judy;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Debug;
+		};
+		9DA4F60F08CE841C008EE9FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_STYLE = STATIC;
+				PRODUCT_NAME = Judy;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Release;
+		};
+		9DA4F61008CE841C008EE9FB /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LIBRARY_STYLE = STATIC;
+				PRODUCT_NAME = Judy;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9D12EAB108CE420700C6653E /* Build configuration list for PBXProject "Judy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9D12EAB208CE420700C6653E /* Debug */,
+				9D12EAB308CE420700C6653E /* Release */,
+				9D12EAB408CE420700C6653E /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		9DA4F0DE08CE6820008EE9FB /* Build configuration list for PBXNativeTarget "libJudy.dylib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DA4F0DF08CE6820008EE9FB /* Debug */,
+				9DA4F0E008CE6820008EE9FB /* Release */,
+				9DA4F0E108CE6820008EE9FB /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		9DA4F60D08CE841C008EE9FB /* Build configuration list for PBXNativeTarget "libJudy.a" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DA4F60E08CE841C008EE9FB /* Debug */,
+				9DA4F60F08CE841C008EE9FB /* Release */,
+				9DA4F61008CE841C008EE9FB /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

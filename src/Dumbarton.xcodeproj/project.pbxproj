@@ -1,0 +1,729 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 42;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		9300D02808723DF40024409B /* Dumbarton.h in Headers */ = {isa = PBXBuildFile; fileRef = 9300D02708723DF40024409B /* Dumbarton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93365A8D0872370700EC726F /* DBMonoClassRepresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 93365A870872370700EC726F /* DBMonoClassRepresentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93365A8E0872370700EC726F /* DBMonoClassRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93365A880872370700EC726F /* DBMonoClassRepresentation.m */; };
+		93365A8F0872370700EC726F /* DBMonoObjectRepresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 93365A890872370700EC726F /* DBMonoObjectRepresentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		93365A900872370700EC726F /* DBMonoObjectRepresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93365A8A0872370700EC726F /* DBMonoObjectRepresentation.m */; };
+		9361F26B087234A90073CD9D /* Mono.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9361F26A087234A90073CD9D /* Mono.framework */; };
+		9D021BFE08811729003E48C1 /* DBInvoke.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D021BFC08811729003E48C1 /* DBInvoke.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D021BFF08811729003E48C1 /* DBInvoke.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D021BFD08811729003E48C1 /* DBInvoke.m */; };
+		9D0EAEA509A3C94D00D63CF1 /* libJudy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D0EAEA209A3C92E00D63CF1 /* libJudy.a */; };
+		9D10FF4008B54E2F0066C2ED /* DBArrayList.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D10FF3E08B54E2F0066C2ED /* DBArrayList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D10FF4108B54E2F0066C2ED /* DBArrayList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D10FF3F08B54E2F0066C2ED /* DBArrayList.m */; };
+		9D13A6EE08833E74008ACA37 /* DBBoxing.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D13A6EC08833E74008ACA37 /* DBBoxing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D496B2F09082F6700CD26AF /* DBImageCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D496B2D09082F6700CD26AF /* DBImageCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D496B3009082F6700CD26AF /* DBImageCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D496B2E09082F6700CD26AF /* DBImageCategory.m */; };
+		9D6335AE09750DAD00FB76DF /* DBWrappedData.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D6335AC09750DAD00FB76DF /* DBWrappedData.h */; };
+		9D6335AF09750DAD00FB76DF /* DBWrappedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6335AD09750DAD00FB76DF /* DBWrappedData.m */; };
+		9D68AF5408EA1569002C7AB0 /* DBDateCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D68AF5208EA1569002C7AB0 /* DBDateCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D68AF5508EA1569002C7AB0 /* DBDateCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D68AF5308EA1569002C7AB0 /* DBDateCategory.m */; };
+		9D69DC4308B1851E008BB787 /* DBMonoEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D69DC4108B1851E008BB787 /* DBMonoEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D69DC4408B1851E008BB787 /* DBMonoEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D69DC4208B1851E008BB787 /* DBMonoEnvironment.m */; };
+		9D8863490974F55500365976 /* DBWrappedString.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8863470974F55500365976 /* DBWrappedString.h */; };
+		9D88634A0974F55500365976 /* DBWrappedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8863480974F55500365976 /* DBWrappedString.m */; };
+		9D88636A0974F59A00365976 /* DBWrappers.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8863680974F59A00365976 /* DBWrappers.h */; };
+		9D8A17D6096A4085000477C0 /* DBFileInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8A17D4096A4085000477C0 /* DBFileInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D8A17D7096A4085000477C0 /* DBFileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A17D5096A4085000477C0 /* DBFileInfo.m */; };
+		9D8BE8210885A57600D019A5 /* DBIList.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8BE81F0885A57600D019A5 /* DBIList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D8BE8220885A57600D019A5 /* DBIList.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8BE8200885A57600D019A5 /* DBIList.m */; };
+		9D8BE945088613C500D019A5 /* DBMonoIncludes.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8BE944088613C500D019A5 /* DBMonoIncludes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D8BE9670886152500D019A5 /* DBCategories.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8BE9660886152500D019A5 /* DBCategories.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D8BE971088615D200D019A5 /* DBUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8BE970088615D200D019A5 /* DBUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DA04A0708C8E22A00EEE149 /* DBMonoRegisteredThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DA04A0508C8E22A00EEE149 /* DBMonoRegisteredThread.h */; };
+		9DA04A0808C8E22A00EEE149 /* DBMonoRegisteredThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA04A0608C8E22A00EEE149 /* DBMonoRegisteredThread.m */; };
+		9DB4200B0873614E0045F939 /* DBStringCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DB420090873614E0045F939 /* DBStringCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DB4200C0873614E0045F939 /* DBStringCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4200A0873614E0045F939 /* DBStringCategory.m */; };
+		9DC576B108CF65C900897270 /* Judy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DC576B008CF65C900897270 /* Judy.h */; };
+		9DF2367B0874E3CC008A199C /* DBDataCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DF236790874E3CC008A199C /* DBDataCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DF2367C0874E3CC008A199C /* DBDataCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF2367A0874E3CC008A199C /* DBDataCategory.m */; };
+		DA4FDE7E09B38A1F00D16517 /* DBSize.h in Headers */ = {isa = PBXBuildFile; fileRef = DA4FDE7C09B38A1F00D16517 /* DBSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA4FDE7F09B38A1F00D16517 /* DBSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4FDE7D09B38A1F00D16517 /* DBSize.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		014CEA440018CDF011CA2923 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		014CEA450018CDF011CA2923 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		9D0EAE9F09A3C92E00D63CF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DA4F36408CE708B008EE9FB /* Judy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9DA4F0DD08CE6802008EE9FB;
+			remoteInfo = libJudy.dylib;
+		};
+		9D0EAEA109A3C92E00D63CF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DA4F36408CE708B008EE9FB /* Judy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9DA4F60208CE83CD008EE9FB;
+			remoteInfo = libJudy.a;
+		};
+		9D0EAECD09A3CB5100D63CF1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9DA4F36408CE708B008EE9FB /* Judy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9DA4F60108CE83CD008EE9FB;
+			remoteInfo = libJudy.a;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF5E0370ADEE00C91783 /* Dumbarton_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dumbarton_Prefix.pch; sourceTree = "<group>"; };
+		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8DC2EF5B0486A6940098B216 /* Dumbarton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Dumbarton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9300D02708723DF40024409B /* Dumbarton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dumbarton.h; sourceTree = "<group>"; };
+		93365A870872370700EC726F /* DBMonoClassRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DBMonoClassRepresentation.h; sourceTree = "<group>"; };
+		93365A880872370700EC726F /* DBMonoClassRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = DBMonoClassRepresentation.m; sourceTree = "<group>"; };
+		93365A890872370700EC726F /* DBMonoObjectRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DBMonoObjectRepresentation.h; sourceTree = "<group>"; };
+		93365A8A0872370700EC726F /* DBMonoObjectRepresentation.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = DBMonoObjectRepresentation.m; sourceTree = "<group>"; };
+		9361F26A087234A90073CD9D /* Mono.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mono.framework; path = /Library/Frameworks/Mono.framework; sourceTree = "<absolute>"; };
+		9D021BFC08811729003E48C1 /* DBInvoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBInvoke.h; sourceTree = "<group>"; };
+		9D021BFD08811729003E48C1 /* DBInvoke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBInvoke.m; sourceTree = "<group>"; };
+		9D10FF3E08B54E2F0066C2ED /* DBArrayList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBArrayList.h; sourceTree = "<group>"; };
+		9D10FF3F08B54E2F0066C2ED /* DBArrayList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBArrayList.m; sourceTree = "<group>"; };
+		9D13A6EC08833E74008ACA37 /* DBBoxing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBBoxing.h; sourceTree = "<group>"; };
+		9D496B2D09082F6700CD26AF /* DBImageCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBImageCategory.h; sourceTree = "<group>"; };
+		9D496B2E09082F6700CD26AF /* DBImageCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBImageCategory.m; sourceTree = "<group>"; };
+		9D6335AC09750DAD00FB76DF /* DBWrappedData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBWrappedData.h; sourceTree = "<group>"; };
+		9D6335AD09750DAD00FB76DF /* DBWrappedData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBWrappedData.m; sourceTree = "<group>"; };
+		9D68AF5208EA1569002C7AB0 /* DBDateCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDateCategory.h; sourceTree = "<group>"; };
+		9D68AF5308EA1569002C7AB0 /* DBDateCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBDateCategory.m; sourceTree = "<group>"; };
+		9D69DC4108B1851E008BB787 /* DBMonoEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMonoEnvironment.h; sourceTree = "<group>"; };
+		9D69DC4208B1851E008BB787 /* DBMonoEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMonoEnvironment.m; sourceTree = "<group>"; };
+		9D8863470974F55500365976 /* DBWrappedString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBWrappedString.h; sourceTree = "<group>"; };
+		9D8863480974F55500365976 /* DBWrappedString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBWrappedString.m; sourceTree = "<group>"; };
+		9D8863680974F59A00365976 /* DBWrappers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBWrappers.h; sourceTree = "<group>"; };
+		9D8A17D4096A4085000477C0 /* DBFileInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFileInfo.h; sourceTree = "<group>"; };
+		9D8A17D5096A4085000477C0 /* DBFileInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFileInfo.m; sourceTree = "<group>"; };
+		9D8BE81F0885A57600D019A5 /* DBIList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBIList.h; sourceTree = "<group>"; };
+		9D8BE8200885A57600D019A5 /* DBIList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBIList.m; sourceTree = "<group>"; };
+		9D8BE944088613C500D019A5 /* DBMonoIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMonoIncludes.h; sourceTree = "<group>"; };
+		9D8BE9660886152500D019A5 /* DBCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBCategories.h; sourceTree = "<group>"; };
+		9D8BE970088615D200D019A5 /* DBUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBUtility.h; sourceTree = "<group>"; };
+		9DA04A0508C8E22A00EEE149 /* DBMonoRegisteredThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMonoRegisteredThread.h; sourceTree = "<group>"; };
+		9DA04A0608C8E22A00EEE149 /* DBMonoRegisteredThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMonoRegisteredThread.m; sourceTree = "<group>"; };
+		9DA4F36408CE708B008EE9FB /* Judy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Judy.xcodeproj; path = Judy/Judy.xcodeproj; sourceTree = "<group>"; };
+		9DB420090873614E0045F939 /* DBStringCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStringCategory.h; sourceTree = "<group>"; };
+		9DB4200A0873614E0045F939 /* DBStringCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStringCategory.m; sourceTree = "<group>"; };
+		9DC576B008CF65C900897270 /* Judy.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Judy.h; path = Judy/src/Judy.h; sourceTree = "<group>"; };
+		9DF236790874E3CC008A199C /* DBDataCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDataCategory.h; sourceTree = "<group>"; };
+		9DF2367A0874E3CC008A199C /* DBDataCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBDataCategory.m; sourceTree = "<group>"; };
+		DA4FDE7C09B38A1F00D16517 /* DBSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBSize.h; path = Image/DBSize.h; sourceTree = "<group>"; };
+		DA4FDE7D09B38A1F00D16517 /* DBSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBSize.m; path = Image/DBSize.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DC2EF560486A6940098B216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9D0EAEA509A3C94D00D63CF1 /* libJudy.a in Frameworks */,
+				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
+				9361F26B087234A90073CD9D /* Mono.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5B0486A6940098B216 /* Dumbarton.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* Dumbarton */ = {
+			isa = PBXGroup;
+			children = (
+				9DA4F36408CE708B008EE9FB /* Judy.xcodeproj */,
+				08FB77AEFE84172EC02AAC07 /* Source */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				089C1665FE841158C02AAC07 /* Resources */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = Dumbarton;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
+				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				9DF236C70875D58E008A199C /* Categories */,
+				9D69DC2A08B1842D008BB787 /* Environment */,
+				9D69DC2B08B1844D008BB787 /* Representations */,
+				9DA049F208C8DEAD00EEE149 /* Posing */,
+				9D021B3108810720003E48C1 /* Utility */,
+				9D8863370974F4D000365976 /* Wrappers */,
+				9300D02708723DF40024409B /* Dumbarton.h */,
+				9D8BE944088613C500D019A5 /* DBMonoIncludes.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9361F26A087234A90073CD9D /* Mono.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9DC576B008CF65C900897270 /* Judy.h */,
+				32DBCF5E0370ADEE00C91783 /* Dumbarton_Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		9D021B3108810720003E48C1 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				9D8BE970088615D200D019A5 /* DBUtility.h */,
+				9D021BFC08811729003E48C1 /* DBInvoke.h */,
+				9D021BFD08811729003E48C1 /* DBInvoke.m */,
+				9D13A6EC08833E74008ACA37 /* DBBoxing.h */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		9D0EAE9B09A3C92E00D63CF1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D0EAEA009A3C92E00D63CF1 /* libJudy.dylib */,
+				9D0EAEA209A3C92E00D63CF1 /* libJudy.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D69DC2A08B1842D008BB787 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				9D69DC4108B1851E008BB787 /* DBMonoEnvironment.h */,
+				9D69DC4208B1851E008BB787 /* DBMonoEnvironment.m */,
+			);
+			name = Environment;
+			sourceTree = "<group>";
+		};
+		9D69DC2B08B1844D008BB787 /* Representations */ = {
+			isa = PBXGroup;
+			children = (
+				9D8BE81E0885A53D00D019A5 /* Collections */,
+				9D8A17D3096A3FCE000477C0 /* IO */,
+				DA4FDE7B09B389FF00D16517 /* Image */,
+				93365A870872370700EC726F /* DBMonoClassRepresentation.h */,
+				93365A880872370700EC726F /* DBMonoClassRepresentation.m */,
+				93365A890872370700EC726F /* DBMonoObjectRepresentation.h */,
+				93365A8A0872370700EC726F /* DBMonoObjectRepresentation.m */,
+			);
+			path = Representations;
+			sourceTree = "<group>";
+		};
+		9D8863370974F4D000365976 /* Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				9D8863470974F55500365976 /* DBWrappedString.h */,
+				9D8863480974F55500365976 /* DBWrappedString.m */,
+				9D8863680974F59A00365976 /* DBWrappers.h */,
+				9D6335AC09750DAD00FB76DF /* DBWrappedData.h */,
+				9D6335AD09750DAD00FB76DF /* DBWrappedData.m */,
+			);
+			path = Wrappers;
+			sourceTree = "<group>";
+		};
+		9D8A17D3096A3FCE000477C0 /* IO */ = {
+			isa = PBXGroup;
+			children = (
+				9D8A17D4096A4085000477C0 /* DBFileInfo.h */,
+				9D8A17D5096A4085000477C0 /* DBFileInfo.m */,
+			);
+			path = IO;
+			sourceTree = "<group>";
+		};
+		9D8BE81E0885A53D00D019A5 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				9D8BE81F0885A57600D019A5 /* DBIList.h */,
+				9D8BE8200885A57600D019A5 /* DBIList.m */,
+				9D10FF3E08B54E2F0066C2ED /* DBArrayList.h */,
+				9D10FF3F08B54E2F0066C2ED /* DBArrayList.m */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+		9DA049F208C8DEAD00EEE149 /* Posing */ = {
+			isa = PBXGroup;
+			children = (
+				9DA04A0508C8E22A00EEE149 /* DBMonoRegisteredThread.h */,
+				9DA04A0608C8E22A00EEE149 /* DBMonoRegisteredThread.m */,
+			);
+			path = Posing;
+			sourceTree = "<group>";
+		};
+		9DF236C70875D58E008A199C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				9D8BE9660886152500D019A5 /* DBCategories.h */,
+				9DB420090873614E0045F939 /* DBStringCategory.h */,
+				9DB4200A0873614E0045F939 /* DBStringCategory.m */,
+				9DF236790874E3CC008A199C /* DBDataCategory.h */,
+				9DF2367A0874E3CC008A199C /* DBDataCategory.m */,
+				9D68AF5208EA1569002C7AB0 /* DBDateCategory.h */,
+				9D68AF5308EA1569002C7AB0 /* DBDateCategory.m */,
+				9D496B2D09082F6700CD26AF /* DBImageCategory.h */,
+				9D496B2E09082F6700CD26AF /* DBImageCategory.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		DA4FDE7B09B389FF00D16517 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				DA4FDE7C09B38A1F00D16517 /* DBSize.h */,
+				DA4FDE7D09B38A1F00D16517 /* DBSize.m */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8DC2EF500486A6940098B216 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93365A8D0872370700EC726F /* DBMonoClassRepresentation.h in Headers */,
+				93365A8F0872370700EC726F /* DBMonoObjectRepresentation.h in Headers */,
+				9300D02808723DF40024409B /* Dumbarton.h in Headers */,
+				9DB4200B0873614E0045F939 /* DBStringCategory.h in Headers */,
+				9DF2367B0874E3CC008A199C /* DBDataCategory.h in Headers */,
+				9D021BFE08811729003E48C1 /* DBInvoke.h in Headers */,
+				9D13A6EE08833E74008ACA37 /* DBBoxing.h in Headers */,
+				9D8BE8210885A57600D019A5 /* DBIList.h in Headers */,
+				9D8BE945088613C500D019A5 /* DBMonoIncludes.h in Headers */,
+				9D8BE9670886152500D019A5 /* DBCategories.h in Headers */,
+				9D8BE971088615D200D019A5 /* DBUtility.h in Headers */,
+				9D69DC4308B1851E008BB787 /* DBMonoEnvironment.h in Headers */,
+				9D10FF4008B54E2F0066C2ED /* DBArrayList.h in Headers */,
+				9DA04A0708C8E22A00EEE149 /* DBMonoRegisteredThread.h in Headers */,
+				9DC576B108CF65C900897270 /* Judy.h in Headers */,
+				9D68AF5408EA1569002C7AB0 /* DBDateCategory.h in Headers */,
+				9D496B2F09082F6700CD26AF /* DBImageCategory.h in Headers */,
+				9D8A17D6096A4085000477C0 /* DBFileInfo.h in Headers */,
+				9D8863490974F55500365976 /* DBWrappedString.h in Headers */,
+				9D88636A0974F59A00365976 /* DBWrappers.h in Headers */,
+				9D6335AE09750DAD00FB76DF /* DBWrappedData.h in Headers */,
+				DA4FDE7E09B38A1F00D16517 /* DBSize.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8DC2EF4F0486A6940098B216 /* Dumbarton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93A417D5087230B000352242 /* Build configuration list for PBXNativeTarget "Dumbarton" */;
+			buildPhases = (
+				8DC2EF500486A6940098B216 /* Headers */,
+				8DC2EF520486A6940098B216 /* Resources */,
+				8DC2EF540486A6940098B216 /* Sources */,
+				8DC2EF560486A6940098B216 /* Frameworks */,
+				9DA4F5BD08CE79CA008EE9FB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Dumbarton_Prefix.pch;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Library/Frameworks";
+				LIBRARY_STYLE = DYNAMIC;
+				PREBINDING = NO;
+				PRODUCT_NAME = Dumbarton;
+				WRAPPER_EXTENSION = framework;
+			};
+			dependencies = (
+				9D0EAECE09A3CB5100D63CF1 /* PBXTargetDependency */,
+			);
+			name = Dumbarton;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = Dumbarton;
+			productReference = 8DC2EF5B0486A6940098B216 /* Dumbarton.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 93A417D9087230B000352242 /* Build configuration list for PBXProject "Dumbarton" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				014CEA440018CDF011CA2923 /* Debug */,
+				014CEA450018CDF011CA2923 /* Release */,
+			);
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* Dumbarton */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9D0EAE9B09A3C92E00D63CF1 /* Products */;
+					ProjectRef = 9DA4F36408CE708B008EE9FB /* Judy.xcodeproj */;
+				},
+			);
+			targets = (
+				8DC2EF4F0486A6940098B216 /* Dumbarton */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9D0EAEA009A3C92E00D63CF1 /* libJudy.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libJudy.dylib;
+			remoteRef = 9D0EAE9F09A3C92E00D63CF1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9D0EAEA209A3C92E00D63CF1 /* libJudy.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libJudy.a;
+			remoteRef = 9D0EAEA109A3C92E00D63CF1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DC2EF520486A6940098B216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9DA4F5BD08CE79CA008EE9FB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# cd $BUILT_PRODUCTS_DIR/Dumbarton.framework\n# install_name_tool -change /usr/local/lib/libJudy.1.dylib @executable_path/../Frameworks/Dumbarton.framework/Libraries/libJudy.dylib Dumbarton\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DC2EF540486A6940098B216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93365A8E0872370700EC726F /* DBMonoClassRepresentation.m in Sources */,
+				93365A900872370700EC726F /* DBMonoObjectRepresentation.m in Sources */,
+				9DB4200C0873614E0045F939 /* DBStringCategory.m in Sources */,
+				9DF2367C0874E3CC008A199C /* DBDataCategory.m in Sources */,
+				9D021BFF08811729003E48C1 /* DBInvoke.m in Sources */,
+				9D8BE8220885A57600D019A5 /* DBIList.m in Sources */,
+				9D69DC4408B1851E008BB787 /* DBMonoEnvironment.m in Sources */,
+				9D10FF4108B54E2F0066C2ED /* DBArrayList.m in Sources */,
+				9DA04A0808C8E22A00EEE149 /* DBMonoRegisteredThread.m in Sources */,
+				9D68AF5508EA1569002C7AB0 /* DBDateCategory.m in Sources */,
+				9D496B3009082F6700CD26AF /* DBImageCategory.m in Sources */,
+				9D8A17D7096A4085000477C0 /* DBFileInfo.m in Sources */,
+				9D88634A0974F55500365976 /* DBWrappedString.m in Sources */,
+				9D6335AF09750DAD00FB76DF /* DBWrappedData.m in Sources */,
+				DA4FDE7F09B38A1F00D16517 /* DBSize.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9D0EAECE09A3CB5100D63CF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libJudy.a;
+			targetProxy = 9D0EAECD09A3CB5100D63CF1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1667FE841158C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		93A417D6087230B000352242 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Dumbarton_Prefix.pch;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				PREBINDING = NO;
+				PRODUCT_NAME = Dumbarton;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		93A417D7087230B000352242 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Dumbarton_Prefix.pch;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				PREBINDING = NO;
+				PRODUCT_NAME = Dumbarton;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		93A417D8087230B000352242 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Dumbarton_Prefix.pch;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Info.plist;
+				PREBINDING = NO;
+				PRODUCT_NAME = Dumbarton;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Default;
+		};
+		93A417DA087230B000352242 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = ppc;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_FAST_OBJC_DISPATCH = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_UNROLL_LOOPS = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-Winline",
+					"-DJUDYERROR_NOTEST",
+					"-D_THREAD_SAFE",
+					"-pthreads",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/include",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include",
+				);
+				OTHER_LDFLAGS = (
+					"-L/Library/Frameworks/Mono.framework/Versions/Current/lib",
+					"-lmono",
+					"-lm",
+					"-lgmodule-2.0",
+					"-lgthread-2.0",
+					"-lglib-2.0",
+					"-lintl",
+					"-liconv",
+				);
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				ZERO_LINK = NO;
+			};
+			name = Debug;
+		};
+		93A417DB087230B000352242 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = ppc;
+				COPY_PHASE_STRIP = YES;
+				DEAD_CODE_STRIPPING = YES;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_FAST_OBJC_DISPATCH = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_UNROLL_LOOPS = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = (
+					"-Winline",
+					"-DJUDYERROR_NOTEST",
+					"-D_THREAD_SAFE",
+					"-pthreads",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/include",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include",
+				);
+				OTHER_LDFLAGS = (
+					"-L/Library/Frameworks/Mono.framework/Versions/Current/lib",
+					"-lmono",
+					"-lm",
+					"-lgmodule-2.0",
+					"-lgthread-2.0",
+					"-lglib-2.0",
+					"-lintl",
+					"-liconv",
+				);
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		93A417DC087230B000352242 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = ppc;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_FAST_OBJC_DISPATCH = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_UNROLL_LOOPS = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				OTHER_CFLAGS = (
+					"-Winline",
+					"-DJUDYERROR_NOTEST",
+					"-D_THREAD_SAFE",
+					"-pthreads",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/include",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include",
+				);
+				OTHER_LDFLAGS = (
+					"-L/Library/Frameworks/Mono.framework/Versions/Current/lib",
+					"-lmono",
+					"-lm",
+					"-lgmodule-2.0",
+					"-lgthread-2.0",
+					"-lglib-2.0",
+					"-lintl",
+					"-liconv",
+				);
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				ZERO_LINK = NO;
+			};
+			name = Default;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		93A417D5087230B000352242 /* Build configuration list for PBXNativeTarget "Dumbarton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93A417D6087230B000352242 /* Debug */,
+				93A417D7087230B000352242 /* Release */,
+				93A417D8087230B000352242 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+		93A417D9087230B000352242 /* Build configuration list for PBXProject "Dumbarton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93A417DA087230B000352242 /* Debug */,
+				93A417DB087230B000352242 /* Release */,
+				93A417DC087230B000352242 /* Default */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Default;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
