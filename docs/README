@@ -1,0 +1,109 @@
+//  README
+//  Dumbarton
+//
+//  Copyright (C) 2006 imeem, inc. All rights reserved.
+//
+// This library is free software; you can redistribute it and/or
+// modify it under the terms of the GNU Lesser General Public
+// License as published by the Free Software Foundation; either
+// version 2.1 of the License, or (at your option) any later version.
+// 
+// This library is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+// Lesser General Public License for more details.
+// 
+// You should have received a copy of the GNU Lesser General Public
+// License along with this library; if not, write to the Free Software
+// Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+//
+
+Overview
+--------
+Dumbarton is an Objective-C framework that works as an interface into the Mono
+C API for embedding. Functionally, it works like an ObjC<->C# language bridge.
+It was originally written in order to bring imeem (http://www.imeem.com) to
+OS X to allow for the usability of a native Cocoa application without requiring
+developers to reimplement the core code that had already been written for the
+Windows client that had been written in C#/.NET. 
+
+Dumbarton provides:
+ - Mapping of memory management between Mono and Objective-C. If you understand
+   memory management in ObjC, memory management of Dumbarton objects is no
+   different.
+ - A set of ObjC categories to facilitate easy conversion between Application
+   Kit objects and their C# equivalents. More will be added as demand requires.
+ - Conversion (and re-throwing) of managed .NET exceptions to Objective-C
+   exceptions.
+
+Prerequisites
+-------------
+- Install Mono.Framework.  You can get Mono.Framework
+from http://www.mono-project.com/Downloads
+- Install the Dumbarton.Framework in this package into /Library/Frameworks
+
+Provided examples
+-----------------
+
+DBCommandLineExample demonstrates a number of Dumbarton features
+- Calling native functions from managed code
+- Calling managed code (functions, properties, fields) from native code
+- Writing a Dumbarton wrapper for a C# class
+- Exception handling
+  
+DBCocoaExample is the classic Currency Converter application; it
+demonstrates a simple frontend that uses mono for its backend.
+
+Creating a new project
+----------------------
+
+To setup a new XCode project using Dumbartion:
+
+- Create an empty project normally, make sure it builds
+
+- Add Mono.Framework and Dumbarton.Framework as to your project
+  (option-click in Groups & Files, Add->Existing Frameworks...)
+
+- Add the output of the shell command "pkg-config mono --libs" to the
+  "Other Linker Flags" section of your project build settings.
+  Also, add "-bind_at_load" to the same setting if you want to supress
+  a linker warning. You may want to replace the explicit version number
+  from the pkg-config output with the word "Current" in order to avoid
+  build problems after upgrading your installation of Mono.
+  (example: /Library/Frameworks/Mono.framework/Versions/1.1.13.2/lib
+   becomes: /Library/Frameworks/Mono.framework/Versions/Current/lib)
+
+- Similarly, do the same with "pkg-config mono --cflags" and the
+  "Other C Flags" section of your project build settings. You should
+  also do the same Mono version replacement as described in the previous
+  step.
+
+- Add /Library/Frameworks to "Framework Search Paths"
+
+- turn off ZeroLink on your Debug target, since it doesn't work against mono
+
+- enabled Objective C exceptions in your project build settings. Dumbarton
+  catches managed exceptions and rethrows them as ObjC exceptions.
+
+- Add any build steps required for compiling your .cs files. The examples
+  just use a simple shell script build step that compiles the C# code into
+  a dll. Depending on your project, you may want to create a separate target
+  for your managed .dll(s) and make your application target depends on the
+  managed .dll targets.
+
+Building the project
+--------------------
+
+At this point, your project should build cleanly and run without linker errors.
+
+To Do
+-----
+
+- Because Mono/Dumbarton do not ship with OS X, you may want to ship Mono and
+  the Dumbarton framework with your application. This is mostly a matter of
+  copying the Mono libraries, Dumbarton.framework, and the parts of the GAC
+  that your managed code requires into your application bundle. You then need
+  to rewrite the install names of your binaries so that they are relative to
+  @executable_path. This will eventually be demonstrated in the release target
+  of the Cocoa example application.
+
