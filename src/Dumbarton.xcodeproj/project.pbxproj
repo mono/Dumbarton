@@ -75,13 +75,6 @@
 /* End PBXBuildStyle section */
 
 /* Begin PBXContainerItemProxy section */
-		9D0EAE9F09A3C92E00D63CF1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9DA4F36408CE708B008EE9FB /* Judy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9DA4F0DD08CE6802008EE9FB;
-			remoteInfo = libJudy.dylib;
-		};
 		9D0EAEA109A3C92E00D63CF1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9DA4F36408CE708B008EE9FB /* Judy.xcodeproj */;
@@ -252,7 +245,6 @@
 		9D0EAE9B09A3C92E00D63CF1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D0EAEA009A3C92E00D63CF1 /* libJudy.dylib */,
 				9D0EAEA209A3C92E00D63CF1 /* libJudy.a */,
 			);
 			name = Products;
@@ -449,13 +441,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		9D0EAEA009A3C92E00D63CF1 /* libJudy.dylib */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.dylib";
-			path = libJudy.dylib;
-			remoteRef = 9D0EAE9F09A3C92E00D63CF1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		9D0EAEA209A3C92E00D63CF1 /* libJudy.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -591,17 +576,21 @@
 		93A417DA087230B000352242 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = ppc;
+				ARCHS = (
+					i386,
+					ppc,
+				);
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_FAST_OBJC_DISPATCH = YES;
-				GCC_MODEL_TUNING = G5;
+				GCC_MODEL_TUNING = "";
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_UNROLL_LOOPS = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_CFLAGS = (
+					"-Winvalid-pch",
 					"-DDEBUG",
 					"-Winline",
 					"-DJUDYERROR_NOTEST",
@@ -629,13 +618,16 @@
 		93A417DB087230B000352242 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = ppc;
+				ARCHS = (
+					i386,
+					ppc,
+				);
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_FAST_OBJC_DISPATCH = YES;
-				GCC_MODEL_TUNING = G5;
+				GCC_MODEL_TUNING = "";
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_UNROLL_LOOPS = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
@@ -666,13 +658,16 @@
 		93A417DC087230B000352242 /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = ppc;
+				ARCHS = (
+					i386,
+					ppc,
+				);
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_FAST_OBJC_DISPATCH = YES;
-				GCC_MODEL_TUNING = G5;
+				GCC_MODEL_TUNING = "";
 				GCC_OPTIMIZATION_LEVEL = 2;
 				GCC_UNROLL_LOOPS = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;

@@ -60,7 +60,6 @@
 		9D12EAF808CE43BB00C6653E /* JudyHS.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = JudyHS.h; sourceTree = "<group>"; };
 		9D12EAFE08CE43D700C6653E /* JudyL.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = JudyL.h; sourceTree = "<group>"; };
 		9D12EB0308CE43F200C6653E /* JudySL.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = JudySL.c; sourceTree = "<group>"; };
-		9DA4F0DD08CE6802008EE9FB /* libJudy.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libJudy.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA4F60208CE83CD008EE9FB /* libJudy.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJudy.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -90,7 +89,6 @@
 		1AB674ADFE9D54B511CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9DA4F0DD08CE6802008EE9FB /* libJudy.dylib */,
 				9DA4F60208CE83CD008EE9FB /* libJudy.a */,
 			);
 			name = Products;
@@ -162,43 +160,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9DA4F0DC08CE6802008EE9FB /* libJudy.dylib */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9DA4F0DE08CE6820008EE9FB /* Build configuration list for PBXNativeTarget "libJudy.dylib" */;
-			buildPhases = (
-				934F35080916B5ED00C16C20 /* make Judy */,
-				933BD2E90916D26800236BCF /* Change install_name */,
-				9DA4F0E208CE682B008EE9FB /* Copy to BUILT_PRODUCTS_DIR */,
-			);
-			buildRules = (
-			);
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				INSTALL_PATH = /usr/local/lib;
-				LIBRARY_STYLE = DYNAMIC;
-				OPTIMIZATION_CFLAGS = "";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PREBINDING = NO;
-				PRODUCT_NAME = Judy;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-			};
-			dependencies = (
-			);
-			name = libJudy.dylib;
-			productName = Judy;
-			productReference = 9DA4F0DD08CE6802008EE9FB /* libJudy.dylib */;
-			productType = "com.apple.product-type.library.dynamic";
-		};
 		9DA4F60108CE83CD008EE9FB /* libJudy.a */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DA4F60D08CE841C008EE9FB /* Build configuration list for PBXNativeTarget "libJudy.a" */;
@@ -249,55 +210,12 @@
 			mainGroup = 08FB7794FE84155DC02AAC07 /* Judy */;
 			projectDirPath = "";
 			targets = (
-				9DA4F0DC08CE6802008EE9FB /* libJudy.dylib */,
 				9DA4F60108CE83CD008EE9FB /* libJudy.a */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		933BD2E90916D26800236BCF /* Change install_name */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Change install_name";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd \"$TARGET_TEMP_DIR/src\"\ninstall_name_tool -id @executable_path/../Libraries/libJudy.dylib src/obj/.libs/libJudy.dylib";
-		};
-		934F35080916B5ED00C16C20 /* make Judy */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "make Judy";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -x\ncd \"$PROJECT_DIR\"\n\nproduct=\"$TARGET_TEMP_DIR/$TARGET_NAME.stamp\"\n\n# logic to determine whether to build; this is crapp-ay\nif [ -f \"$product\" ]\nthen\n\tfind_output=`find \"$PROJECT_DIR\"/src -maxdepth 3 -type f -newer \"$product\" ! -regex '.*\\.svn.*'`\n\n\tif [ \"x$find_output\" == \"x\" ]\n\tthen\n\t\techo \"Short circuiting build, looks like nothing's changed.\"\n\t\texit 0\n\tfi\nfi\n\nmkdir -p \"$TARGET_TEMP_DIR\"\nrsync -avv --exclude=.svn \"$PROJECT_DIR\" \"$TARGET_TEMP_DIR\"\ncd \"$TARGET_TEMP_DIR/Judy\"\nexport CFLAGS=\"$OTHER_CFLAGS\"\n./configure --enable-32-bit\nmake && touch \"$product\"\n\nmkdir -p \"$BUILT_PRODUCTS_DIR\"\nexit 0";
-		};
-		9DA4F0E208CE682B008EE9FB /* Copy to BUILT_PRODUCTS_DIR */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy to BUILT_PRODUCTS_DIR";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd \"$TARGET_TEMP_DIR/Judy\"\ncp -p src/obj/.libs/libJudy.dylib \"$BUILT_PRODUCTS_DIR\"\n";
-		};
 		9DA4F60508CE83FE008EE9FB /* Copy to BUILT_PRODUCTS_DIR */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -324,7 +242,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -x\ncd \"$PROJECT_DIR\"\n\nproduct=\"$TARGET_TEMP_DIR/$TARGET_NAME.stamp\"\n\n# logic to determine whether to build; this is crapp-ay\nif [ -f \"$product\" ]\nthen\n\tfind_output=`find \"$PROJECT_DIR\"/src -maxdepth 3 -type f -newer \"$product\" ! -regex '.*\\.svn.*'`\n\n\tif [ \"x$find_output\" == \"x\" ]\n\tthen\n\t\techo \"Short circuiting build, looks like nothing's changed.\"\n\t\texit 0\n\tfi\nfi\n\nmkdir -p \"$TARGET_TEMP_DIR\"\nrsync -avv --exclude=.svn \"$PROJECT_DIR\" \"$TARGET_TEMP_DIR\"\ncd \"$TARGET_TEMP_DIR/Judy\"\nexport CFLAGS=\"$OTHER_CFLAGS\"\n./configure --enable-32-bit\nmake && touch \"$product\"\n\nmkdir -p \"$BUILT_PRODUCTS_DIR\"\nexit 0";
+			shellScript = "set -x\ncd \"$PROJECT_DIR\"\n\nproduct=\"$TARGET_TEMP_DIR/$TARGET_NAME.stamp\"\n\n# logic to determine whether to build; this is crapp-ay\nif [ -f \"$product\" ]\nthen\n\tfind_output=`find \"$PROJECT_DIR\"/src -maxdepth 3 -type f -newer \"$product\" ! -regex '.*\\.svn.*'`\n\n\tif [ \"x$find_output\" == \"x\" ]\n\tthen\n\t\techo \"Short circuiting build, looks like nothing's changed.\"\n\t\texit 0\n\tfi\nfi\n\nmkdir -p \"$TARGET_TEMP_DIR\"\nrsync -avv --exclude=.svn \"$PROJECT_DIR\" \"$TARGET_TEMP_DIR\"\ncd \"$TARGET_TEMP_DIR/Judy\"\nenv CC=\"/usr/bin/gcc-4.0 -isysroot /Developer/SDKs/MacOSX10.4u.sdk\" \\\n\tCFLAGS=\"-O -g -arch i386 -arch ppc\" \\\n   ./configure --enable-32-bit --disable-dependency-tracking\nmake && touch \"$product\"\n\nmkdir -p \"$BUILT_PRODUCTS_DIR\"\nexit 0";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -332,6 +250,10 @@
 		9D12EAB208CE420700C6653E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					i386,
+					ppc,
+				);
 				COPY_PHASE_STRIP = NO;
 				GCC_DEBUGGING_SYMBOLS = full;
 				INSTALL_PATH = "@executable_path/../Libraries";
@@ -339,7 +261,6 @@
 				OTHER_CFLAGS = (
 					"-g",
 					"-O2",
-					"-mtune=G5",
 				);
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				SKIP_INSTALL = YES;
@@ -351,8 +272,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = (
-					ppc,
 					i386,
+					ppc,
 				);
 				GCC_DEBUGGING_SYMBOLS = full;
 				INSTALL_PATH = "@executable_path/../Libraries";
@@ -360,7 +281,6 @@
 				OTHER_CFLAGS = (
 					"-g",
 					"-O2",
-					"-mtune=G5",
 				);
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				SKIP_INSTALL = YES;
@@ -370,64 +290,19 @@
 		9D12EAB408CE420700C6653E /* Default */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = (
+					i386,
+					ppc,
+				);
 				GCC_DEBUGGING_SYMBOLS = full;
 				INSTALL_PATH = "@executable_path/../Libraries";
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_CFLAGS = (
 					"-g",
 					"-O2",
-					"-mtune=G5",
 				);
 				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				SKIP_INSTALL = YES;
-			};
-			name = Default;
-		};
-		9DA4F0DF08CE6820008EE9FB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				LIBRARY_STYLE = DYNAMIC;
-				MACH_O_TYPE = mh_dylib;
-				PRODUCT_NAME = libJudy;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-			};
-			name = Debug;
-		};
-		9DA4F0E008CE6820008EE9FB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				LIBRARY_STYLE = DYNAMIC;
-				MACH_O_TYPE = mh_dylib;
-				PRODUCT_NAME = libJudy;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-			};
-			name = Release;
-		};
-		9DA4F0E108CE6820008EE9FB /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				LIBRARY_STYLE = DYNAMIC;
-				MACH_O_TYPE = mh_dylib;
-				PRODUCT_NAME = libJudy;
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
 			};
 			name = Default;
 		};
@@ -479,16 +354,6 @@
 				9D12EAB208CE420700C6653E /* Debug */,
 				9D12EAB308CE420700C6653E /* Release */,
 				9D12EAB408CE420700C6653E /* Default */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
-		};
-		9DA4F0DE08CE6820008EE9FB /* Build configuration list for PBXNativeTarget "libJudy.dylib" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9DA4F0DF08CE6820008EE9FB /* Debug */,
-				9DA4F0E008CE6820008EE9FB /* Release */,
-				9DA4F0E108CE6820008EE9FB /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Default;
