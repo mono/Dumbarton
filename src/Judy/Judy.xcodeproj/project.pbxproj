@@ -242,7 +242,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -x\ncd \"$PROJECT_DIR\"\n\nproduct=\"$TARGET_TEMP_DIR/$TARGET_NAME.stamp\"\n\n# logic to determine whether to build; this is crapp-ay\nif [ -f \"$product\" ]\nthen\n\tfind_output=`find \"$PROJECT_DIR\"/src -maxdepth 3 -type f -newer \"$product\" ! -regex '.*\\.svn.*'`\n\n\tif [ \"x$find_output\" == \"x\" ]\n\tthen\n\t\techo \"Short circuiting build, looks like nothing's changed.\"\n\t\texit 0\n\tfi\nfi\n\nmkdir -p \"$TARGET_TEMP_DIR\"\nrsync -avv --exclude=.svn \"$PROJECT_DIR\" \"$TARGET_TEMP_DIR\"\ncd \"$TARGET_TEMP_DIR/Judy\"\nenv CC=\"/usr/bin/gcc-4.0 -isysroot /Developer/SDKs/MacOSX10.4u.sdk\" \\\n\tCFLAGS=\"-O -g -arch i386 -arch ppc\" \\\n   ./configure --enable-32-bit --disable-dependency-tracking\nmake && touch \"$product\"\n\nmkdir -p \"$BUILT_PRODUCTS_DIR\"\nexit 0";
+			shellScript = "set -x\ncd \"$PROJECT_DIR\"\n\nproduct=\"$TARGET_TEMP_DIR/$TARGET_NAME.stamp\"\n\n# logic to determine whether to build; this is crapp-ay\nif [ -f \"$product\" ]\nthen\n\tfind_output=`find \"$PROJECT_DIR\"/src -maxdepth 3 -type f -newer \"$product\" ! -regex '.*\\.svn.*'`\n\n\tif [ \"x$find_output\" == \"x\" ]\n\tthen\n\t\techo \"Short circuiting build, looks like nothing's changed.\"\n\t\texit 0\n\tfi\nfi\n\nmkdir -p \"$TARGET_TEMP_DIR\"\nrsync -avv --exclude=.svn \"$PROJECT_DIR\" \"$TARGET_TEMP_DIR\"\ncd \"$TARGET_TEMP_DIR/Judy\"\n\nif test \"x$BUILD_STYLE\" == \"xRelease\"; then\n\tCFLAGS=\"-O2 -g -arch i386 -arch ppc\"\nelse\n\tCFLAGS=\"-O2 -g\"\nfi\n\nenv CC=\"/usr/bin/gcc-4.0 -isysroot /Developer/SDKs/MacOSX10.4u.sdk\" \\\n\tCFLAGS=\"$CFLAGS\" \\\n\t./configure --enable-32-bit --disable-dependency-tracking\n\nmake && touch \"$product\"\n\nmkdir -p \"$BUILT_PRODUCTS_DIR\"\nexit 0";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -250,10 +250,6 @@
 		9D12EAB208CE420700C6653E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
 				COPY_PHASE_STRIP = NO;
 				GCC_DEBUGGING_SYMBOLS = full;
 				INSTALL_PATH = "@executable_path/../Libraries";
