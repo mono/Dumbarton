@@ -25,16 +25,20 @@
 @implementation DBWrappedData
 
 - (id)initWithMonoArray:(MonoArray *)monoArray {
-	_monoArray = monoArray;
-	if(monoArray == NULL) {
-		[self release];
-		self = nil;
-	} else {
-		_gcHandle = mono_gchandle_new((MonoObject *)monoArray, YES);
+	self = [super init];
+	
+	if(self) {
+		_monoArray = monoArray;
+		if(monoArray == NULL) {
+			[self release];
+			self = nil;
+		} else {
+			_gcHandle = mono_gchandle_new((MonoObject *)monoArray, YES);
 		
-		MonoClass *arrayClass = mono_object_get_class((MonoObject *)monoArray);
-		_dataBytes = monoArray->vector;
-		_dataLength = mono_array_length(monoArray) * mono_array_element_size(arrayClass);
+			MonoClass *arrayClass = mono_object_get_class((MonoObject *)monoArray);
+			_dataBytes = monoArray->vector;
+			_dataLength = mono_array_length(monoArray) * mono_array_element_size(arrayClass);
+		}
 	}
 	
 	return(self);

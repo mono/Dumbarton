@@ -25,13 +25,17 @@
 @implementation DBWrappedString
 
 - (id)initWithMonoString:(MonoString *)monoString {
-	_monoString = monoString;
-	if(monoString == NULL) {
-		[self release];
-		self = nil;
-	} else {
-		_gcHandle = mono_gchandle_new((MonoObject *)monoString, NO);
-		_stringLength = mono_string_length(monoString);
+	self = [super init];
+	
+	if(self) {
+		_monoString = monoString;
+		if(monoString == NULL) {
+			[self release];
+			self = nil;
+		} else {
+			_gcHandle = mono_gchandle_new((MonoObject *)monoString, NO);
+			_stringLength = mono_string_length(monoString);
+		}
 	}
 	
 	return(self);
