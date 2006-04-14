@@ -41,6 +41,8 @@
 		9D8BE971088615D200D019A5 /* DBUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8BE970088615D200D019A5 /* DBUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DA04A0708C8E22A00EEE149 /* DBMonoRegisteredThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DA04A0508C8E22A00EEE149 /* DBMonoRegisteredThread.h */; };
 		9DA04A0808C8E22A00EEE149 /* DBMonoRegisteredThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA04A0608C8E22A00EEE149 /* DBMonoRegisteredThread.m */; };
+		9DA8F08D09EF2BDF000EE2DE /* DBArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DA8F08B09EF2BDF000EE2DE /* DBArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DA8F08E09EF2BE0000EE2DE /* DBArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8F08C09EF2BDF000EE2DE /* DBArray.m */; };
 		9DB4200B0873614E0045F939 /* DBStringCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DB420090873614E0045F939 /* DBStringCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DB4200C0873614E0045F939 /* DBStringCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4200A0873614E0045F939 /* DBStringCategory.m */; };
 		9DC576B108CF65C900897270 /* Judy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DC576B008CF65C900897270 /* Judy.h */; };
@@ -129,6 +131,8 @@
 		9DA04A0508C8E22A00EEE149 /* DBMonoRegisteredThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMonoRegisteredThread.h; sourceTree = "<group>"; };
 		9DA04A0608C8E22A00EEE149 /* DBMonoRegisteredThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMonoRegisteredThread.m; sourceTree = "<group>"; };
 		9DA4F36408CE708B008EE9FB /* Judy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Judy.xcodeproj; path = Judy/Judy.xcodeproj; sourceTree = "<group>"; };
+		9DA8F08B09EF2BDF000EE2DE /* DBArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBArray.h; sourceTree = "<group>"; };
+		9DA8F08C09EF2BDF000EE2DE /* DBArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBArray.m; sourceTree = "<group>"; };
 		9DB420090873614E0045F939 /* DBStringCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStringCategory.h; sourceTree = "<group>"; };
 		9DB4200A0873614E0045F939 /* DBStringCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStringCategory.m; sourceTree = "<group>"; };
 		9DC576B008CF65C900897270 /* Judy.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Judy.h; path = Judy/src/Judy.h; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 				9D8BE81E0885A53D00D019A5 /* Collections */,
 				9D8A17D3096A3FCE000477C0 /* IO */,
 				DA4FDE7B09B389FF00D16517 /* Image */,
+				9DA8F08A09EF2BA4000EE2DE /* System */,
 				93365A870872370700EC726F /* DBMonoClassRepresentation.h */,
 				93365A880872370700EC726F /* DBMonoClassRepresentation.m */,
 				93365A890872370700EC726F /* DBMonoObjectRepresentation.h */,
@@ -276,9 +281,9 @@
 		9D8863370974F4D000365976 /* Wrappers */ = {
 			isa = PBXGroup;
 			children = (
+				9D8863680974F59A00365976 /* DBWrappers.h */,
 				9D8863470974F55500365976 /* DBWrappedString.h */,
 				9D8863480974F55500365976 /* DBWrappedString.m */,
-				9D8863680974F59A00365976 /* DBWrappers.h */,
 				9D6335AC09750DAD00FB76DF /* DBWrappedData.h */,
 				9D6335AD09750DAD00FB76DF /* DBWrappedData.m */,
 			);
@@ -312,6 +317,15 @@
 				9DA04A0608C8E22A00EEE149 /* DBMonoRegisteredThread.m */,
 			);
 			path = Posing;
+			sourceTree = "<group>";
+		};
+		9DA8F08A09EF2BA4000EE2DE /* System */ = {
+			isa = PBXGroup;
+			children = (
+				9DA8F08B09EF2BDF000EE2DE /* DBArray.h */,
+				9DA8F08C09EF2BDF000EE2DE /* DBArray.m */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 		9DF236C70875D58E008A199C /* Categories */ = {
@@ -368,6 +382,7 @@
 				9D88636A0974F59A00365976 /* DBWrappers.h in Headers */,
 				9D6335AE09750DAD00FB76DF /* DBWrappedData.h in Headers */,
 				DA4FDE7E09B38A1F00D16517 /* DBSize.h in Headers */,
+				9DA8F08D09EF2BDF000EE2DE /* DBArray.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +512,7 @@
 				9D88634A0974F55500365976 /* DBWrappedString.m in Sources */,
 				9D6335AF09750DAD00FB76DF /* DBWrappedData.m in Sources */,
 				DA4FDE7F09B38A1F00D16517 /* DBSize.m in Sources */,
+				9DA8F08E09EF2BE0000EE2DE /* DBArray.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

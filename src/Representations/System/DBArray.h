@@ -1,7 +1,8 @@
-
+//
+//  DBArray.h
 //  Dumbarton
-//  DBSize.h
-//  Created by Dustin Mierau on 2/27/06
+//
+//  Created by Allan Hsu on 4/13/06.
 //  Copyright (C) 2005, 2006 imeem, inc. All rights reserved.
 //
 // This library is free software; you can redistribute it and/or
@@ -19,17 +20,30 @@
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
+#import <Foundation/Foundation.h>
+
 #import "DBMonoObjectRepresentation.h"
 #import "DBMonoIncludes.h"
 
-@interface DBSize : DBMonoObjectRepresentation
+@interface DBArray : DBMonoObjectRepresentation {
+	@protected
+	Class _representationClass;
+	
+	uint32_t _arrayLength;
+}
 
-+ (DBSize *)sizeWithMonoObject:(MonoObject *)monoObject;
-+ (NSSize)convertToNSSize:(MonoObject *)monoObject;
++ (id)arrayWithMonoArray:(MonoArray *)monoArray withRepresentationClass:(Class)representationClass;
 
-- (int)width;
-- (int)height;
+- (id)initWithMonoArray:(MonoArray *)monoArray withRepresentationClass:(Class)representationClass;
 
-- (BOOL)isEmpty;
+- (uint32_t)count;
+
+//Access
+- (MonoObject *)monoObjectAtIndex:(uint32_t)index;
+- (void)setMonoObject:(MonoObject *)monoObject forIndex:(uint32_t)index;
+
+//Wrapped Access
+- (id)objectAtIndex:(uint32_t)index;
+- (void)setObjectAtIndex:(uint32_t)index object:(DBMonoObjectRepresentation *)object;
 
 @end

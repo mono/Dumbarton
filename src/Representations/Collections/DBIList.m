@@ -57,7 +57,7 @@
 //Wrapped Indexer Access
 //
 - (id)objectAtIndex:(int)index {
-	if(_representationClass != NULL) {
+	if(_representationClass != nil) {
 		id retID = nil;
 		
 		if(_representationClass != nil) {
@@ -67,7 +67,7 @@
 		
 		return(retID);
 	} else {
-		@throw([NSException exceptionWithName:@"No Representation Class" reason:@"objectAtIndex called on a DBIList without specified RepresentationClass" userInfo:nil]);
+		@throw([NSException exceptionWithName:@"DBNoRepresentationClass" reason:@"objectAtIndex called on a DBIList without specified Representation Class" userInfo:nil]);
 	}
 }
 

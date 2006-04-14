@@ -63,6 +63,17 @@
 	 */
 }
 
+#pragma mark -
+
+// This method is here so that we can get NSStrings right out of ILists and Arrays by specifying NSString as the representation class.
++ (id)representationWithMonoObject:(MonoString *)monoString {
+	DBWrappedString *wrappedString = [[DBWrappedString alloc] initWithMonoString:monoString];
+	
+	return([wrappedString autorelease]);	
+}
+
+#pragma mark -
+
 - (MonoString *)monoString {
 	MonoString *monoString = mono_string_new_size(mono_domain_get(), [self length]);
 

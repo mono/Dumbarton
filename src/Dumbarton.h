@@ -28,10 +28,16 @@
 #import "DBMonoObjectRepresentation.h"
 
 //representaation subclasses
+//System
+#import "DBArray.h"
+//System.IO
 #import "DBFileInfo.h"
+//System.Collections
 #import "DBIList.h"
 #import "DBArrayList.h"
+//System.Drawing
 #import "DBSize.h"
+
 
 //categories
 #import "DBCategories.h"
