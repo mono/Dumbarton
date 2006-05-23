@@ -41,6 +41,8 @@
 		9D8BE971088615D200D019A5 /* DBUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8BE970088615D200D019A5 /* DBUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DA04A0708C8E22A00EEE149 /* DBMonoRegisteredThread.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DA04A0508C8E22A00EEE149 /* DBMonoRegisteredThread.h */; };
 		9DA04A0808C8E22A00EEE149 /* DBMonoRegisteredThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA04A0608C8E22A00EEE149 /* DBMonoRegisteredThread.m */; };
+		9DA75F670A239104008EC2F7 /* DBArrayCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DA75F650A239104008EC2F7 /* DBArrayCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DA75F680A239104008EC2F7 /* DBArrayCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA75F660A239104008EC2F7 /* DBArrayCategory.m */; };
 		9DA8F08D09EF2BDF000EE2DE /* DBArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DA8F08B09EF2BDF000EE2DE /* DBArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DA8F08E09EF2BE0000EE2DE /* DBArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA8F08C09EF2BDF000EE2DE /* DBArray.m */; };
 		9DB4200B0873614E0045F939 /* DBStringCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DB420090873614E0045F939 /* DBStringCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -131,6 +133,8 @@
 		9DA04A0508C8E22A00EEE149 /* DBMonoRegisteredThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBMonoRegisteredThread.h; sourceTree = "<group>"; };
 		9DA04A0608C8E22A00EEE149 /* DBMonoRegisteredThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBMonoRegisteredThread.m; sourceTree = "<group>"; };
 		9DA4F36408CE708B008EE9FB /* Judy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Judy.xcodeproj; path = Judy/Judy.xcodeproj; sourceTree = "<group>"; };
+		9DA75F650A239104008EC2F7 /* DBArrayCategory.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; path = DBArrayCategory.h; sourceTree = "<group>"; };
+		9DA75F660A239104008EC2F7 /* DBArrayCategory.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = DBArrayCategory.m; sourceTree = "<group>"; };
 		9DA8F08B09EF2BDF000EE2DE /* DBArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBArray.h; sourceTree = "<group>"; };
 		9DA8F08C09EF2BDF000EE2DE /* DBArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBArray.m; sourceTree = "<group>"; };
 		9DB420090873614E0045F939 /* DBStringCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStringCategory.h; sourceTree = "<group>"; };
@@ -332,6 +336,8 @@
 			isa = PBXGroup;
 			children = (
 				9D8BE9660886152500D019A5 /* DBCategories.h */,
+				9DA75F650A239104008EC2F7 /* DBArrayCategory.h */,
+				9DA75F660A239104008EC2F7 /* DBArrayCategory.m */,
 				9DB420090873614E0045F939 /* DBStringCategory.h */,
 				9DB4200A0873614E0045F939 /* DBStringCategory.m */,
 				9DF236790874E3CC008A199C /* DBDataCategory.h */,
@@ -383,6 +389,7 @@
 				9D6335AE09750DAD00FB76DF /* DBWrappedData.h in Headers */,
 				DA4FDE7E09B38A1F00D16517 /* DBSize.h in Headers */,
 				9DA8F08D09EF2BDF000EE2DE /* DBArray.h in Headers */,
+				9DA75F670A239104008EC2F7 /* DBArrayCategory.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +520,7 @@
 				9D6335AF09750DAD00FB76DF /* DBWrappedData.m in Sources */,
 				DA4FDE7F09B38A1F00D16517 /* DBSize.m in Sources */,
 				9DA8F08E09EF2BE0000EE2DE /* DBArray.m in Sources */,
+				9DA75F680A239104008EC2F7 /* DBArrayCategory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

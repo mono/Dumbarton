@@ -1,8 +1,8 @@
-//
-//  DBCategories.h
+
 //  Dumbarton
-//
-//  Copyright (C) 2005, 2006 imeem, inc. All rights reserved.
+//  DBArrayCategory.h
+//  Created by Dustin Mierau on 5/22/06.
+//  Copyright 2006 imeem. All rights reserved.
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the terms of the GNU Lesser General Public
@@ -19,8 +19,10 @@
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //
 
-#import "DBArrayCategory.h"
-#import "DBStringCategory.h"
-#import "DBDataCategory.h"
-#import "DBDateCategory.h"
-#import "DBImageCategory.h"
+#import <Dumbarton/Dumbarton.h>
+
+@interface NSArray (Dumbarton)
+
+- (DBArrayList *)arrayList;
+
+@end

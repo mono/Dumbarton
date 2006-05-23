@@ -1,8 +1,8 @@
-//
-//  DBCategories.h
+
 //  Dumbarton
-//
-//  Copyright (C) 2005, 2006 imeem, inc. All rights reserved.
+//  DBArrayCategory.m
+//  Created by Dustin Mierau on 5/22/06.
+//  Copyright 2006 imeem, Inc. All rights reserved.
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the terms of the GNU Lesser General Public
@@ -20,7 +20,27 @@
 //
 
 #import "DBArrayCategory.h"
-#import "DBStringCategory.h"
-#import "DBDataCategory.h"
-#import "DBDateCategory.h"
-#import "DBImageCategory.h"
+
+@implementation NSArray (Dumbarton)
+
+- (DBArrayList *)arrayList
+{
+	DBArrayList *monoArrayList = [[[DBArrayList alloc] init] autorelease];
+	NSEnumerator *enumerator = [self objectEnumerator];
+	id object = nil;
+	
+	while(object = [enumerator nextObject]) {
+		MonoObject *monoObject;
+		
+		if([object isKindOfClass:[NSString class]])
+			monoObject = (MonoObject *)[(NSString *)object monoString];
+		else
+			monoObject = [object monoObject];
+		
+		[monoArrayList addMonoObject:monoObject];
+	}
+	
+	return(monoArrayList);
+}
+
+@end
