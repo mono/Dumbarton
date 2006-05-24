@@ -54,30 +54,6 @@
 		DA4FDE7F09B38A1F00D16517 /* DBSize.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4FDE7D09B38A1F00D16517 /* DBSize.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildStyle section */
-		014CEA440018CDF011CA2923 /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				ZERO_LINK = YES;
-			};
-			name = Debug;
-		};
-		014CEA450018CDF011CA2923 /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-/* End PBXBuildStyle section */
-
 /* Begin PBXContainerItemProxy section */
 		9D0EAEA109A3C92E00D63CF1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -408,23 +384,6 @@
 			);
 			buildRules = (
 			);
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Dumbarton_Prefix.pch;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Frameworks";
-				LIBRARY_STYLE = DYNAMIC;
-				PREBINDING = NO;
-				PRODUCT_NAME = Dumbarton;
-				WRAPPER_EXTENSION = framework;
-			};
 			dependencies = (
 				9D0EAECE09A3CB5100D63CF1 /* PBXTargetDependency */,
 			);
@@ -440,12 +399,6 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 93A417D9087230B000352242 /* Build configuration list for PBXProject "Dumbarton" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				014CEA440018CDF011CA2923 /* Debug */,
-				014CEA450018CDF011CA2923 /* Release */,
-			);
 			hasScannedForEncodings = 1;
 			mainGroup = 0867D691FE84028FC02AAC07 /* Dumbarton */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
@@ -580,28 +533,12 @@
 			};
 			name = Release;
 		};
-		93A417D8087230B000352242 /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = Dumbarton_Prefix.pch;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Info.plist;
-				PREBINDING = NO;
-				PRODUCT_NAME = Dumbarton;
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Default;
-		};
 		93A417DA087230B000352242 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_FAST_OBJC_DISPATCH = YES;
@@ -644,6 +581,7 @@
 				);
 				COPY_PHASE_STRIP = YES;
 				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_FAST_OBJC_DISPATCH = YES;
@@ -675,46 +613,6 @@
 			};
 			name = Release;
 		};
-		93A417DC087230B000352242 /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-				);
-				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
-				FRAMEWORK_SEARCH_PATHS = /Library/Frameworks;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_FAST_OBJC_DISPATCH = YES;
-				GCC_MODEL_TUNING = "";
-				GCC_OPTIMIZATION_LEVEL = 2;
-				GCC_UNROLL_LOOPS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				OTHER_CFLAGS = (
-					"-Winline",
-					"-DJUDYERROR_NOTEST",
-					"-D_THREAD_SAFE",
-					"-pthreads",
-					"-I/Library/Frameworks/Mono.framework/Versions/Current/include",
-					"-I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0",
-					"-I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include",
-				);
-				OTHER_LDFLAGS = (
-					"-L/Library/Frameworks/Mono.framework/Versions/Current/lib",
-					"-lmono",
-					"-lm",
-					"-lgmodule-2.0",
-					"-lgthread-2.0",
-					"-lglib-2.0",
-					"-lintl",
-					"-liconv",
-				);
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
-				ZERO_LINK = NO;
-			};
-			name = Default;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -723,20 +621,18 @@
 			buildConfigurations = (
 				93A417D6087230B000352242 /* Debug */,
 				93A417D7087230B000352242 /* Release */,
-				93A417D8087230B000352242 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Debug;
 		};
 		93A417D9087230B000352242 /* Build configuration list for PBXProject "Dumbarton" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				93A417DA087230B000352242 /* Debug */,
 				93A417DB087230B000352242 /* Release */,
-				93A417DC087230B000352242 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
