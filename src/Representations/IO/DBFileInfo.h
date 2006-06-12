@@ -28,7 +28,12 @@
 
 }
 
-+ (DBFileInfo *)fileInfoWithMonoObject:(MonoObject *)monoObject;
++ (id)fileInfoWithMonoObject:(MonoObject *)monoObject;
++ (id)fileInfoWithURL:(NSURL *)url;
++ (id)fileInfoWithPath:(NSString *)path;
+
+- (id)initWithURL:(NSURL *)url;
+- (id)initWithPath:(NSString *)path;
 
 - (NSString *)fullFilePath;
 - (NSString *)filename;

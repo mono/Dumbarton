@@ -35,11 +35,42 @@ static MonoClass *_monoClass = NULL;
 	return(_monoClass);
 }
 
-+ (DBFileInfo *)fileInfoWithMonoObject:(MonoObject *)monoObject {
+#pragma mark -
+
++ (id)fileInfoWithMonoObject:(MonoObject *)monoObject {
 	DBFileInfo *fileInfo = [[DBFileInfo alloc] initWithMonoObject:monoObject];
 	
 	return([fileInfo autorelease]);
 }
+
++ (id)fileInfoWithURL:(NSURL *)url {
+	DBFileInfo *fileInfo = [[DBFileInfo alloc] initWithURL:url];
+	
+	return([fileInfo autorelease]);
+}
+
++ (id)fileInfoWithPath:(NSString *)path {
+	DBFileInfo *fileInfo = [[DBFileInfo alloc] initWithPath:path];
+	
+	return([fileInfo autorelease]);
+}
+
+#pragma mark -
+
+- (id)initWithURL:(NSURL *)url {
+	if(![url isFileURL])
+		[NSException raise:NSInvalidArgumentException format:@"URL must be a file URL"];
+	
+	return([self initWithPath:[url path]]);
+}
+
+- (id)initWithPath:(NSString *)path {
+	self = [super initWithSignature:"string" withNumArgs:1, [path monoString]];
+	
+	return(self);
+}
+
+#pragma mark -
 
 - (NSString *)fullFilePath {
 	MonoString *monoPath = (MonoString *)[self getProperty:"FullName"];
