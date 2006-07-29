@@ -60,4 +60,15 @@
 - (MonoObject *)getProperty:(const char *)propertyName;
 - (void)setProperty:(const char *)propertyName valueObject:(MonoObject *)valueObject;
 
+//System.IConvertible convenience
+- (int8_t)int8Value;
+- (int16_t)int16Value;
+- (int32_t)int32Value;
+- (int64_t)int64Value;
+
+- (uint8_t)unsigned8Value;
+- (uint16_t)unsigned16Value;
+- (uint32_t)unsigned32Value;
+- (uint64_t)unsigned64Value;
+
 @end

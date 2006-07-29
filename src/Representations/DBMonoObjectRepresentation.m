@@ -21,6 +21,7 @@
 
 #import "DBMonoObjectRepresentation.h"
 
+#import "DBConvert.h"
 #import "DBStringCategory.h"
 
 @implementation DBMonoObjectRepresentation
@@ -101,6 +102,7 @@
 	return([NSString stringWithMonoString:monoString]);
 }
 
+#pragma mark -
 #pragma mark NSCopying Protocol
 
 - (id)copyWithZone:(NSZone *)zone {
@@ -119,6 +121,7 @@
 	return _obj;
 }
 
+#pragma mark -
 #pragma mark Method Invocation
 
 - (MonoObject *)invokeMethod:(const char *)methodName withNumArgs:(int)numArgs varArgList:(va_list)va_args {
@@ -136,6 +139,7 @@
 	return ret;
 }
 
+#pragma mark -
 #pragma mark Indexer Access
 
 - (MonoObject *)monoObjectForIndexObject:(void *)indexObject {
@@ -146,6 +150,7 @@
 	DBMonoObjectSetIndexedObject(_obj, indexObject, valueObject);
 }
 
+#pragma mark -
 #pragma mark Field Access
 
 - (void)getField:(const char *)fieldName valueObject:(void *)valueObject {
@@ -156,6 +161,7 @@
 	DBMonoObjectSetField(_obj, fieldName, valueObject);
 }
 
+#pragma mark -
 #pragma mark Property Access
 
 - (MonoObject *)getProperty:(const char *)propertyName {
@@ -166,5 +172,39 @@
 	DBMonoObjectSetProperty(_obj, propertyName, valueObject);
 }
 
+#pragma mark -
+#pragma mark System.IConvertible convenience
+
+- (int8_t)int8Value {
+	return([DBConvert convertMonoObjectToInt8:_obj]);
+}
+
+- (int16_t)int16Value {
+	return([DBConvert convertMonoObjectToInt16:_obj]);
+}
+
+- (int32_t)int32Value {
+	return([DBConvert convertMonoObjectToInt32:_obj]);
+}
+
+- (int64_t)int64Value {
+	return([DBConvert convertMonoObjectToInt64:_obj]);
+}
+
+- (uint8_t)unsigned8Value {
+	return([DBConvert convertMonoObjectToUInt8:_obj]);
+}
+
+- (uint16_t)unsigned16Value {
+	return([DBConvert convertMonoObjectToUInt16:_obj]);
+}
+
+- (uint32_t)unsigned32Value {
+	return([DBConvert convertMonoObjectToUInt32:_obj]);
+}
+
+- (uint64_t)unsigned64Value {
+	return([DBConvert convertMonoObjectToUInt64:_obj]);
+}
 
 @end

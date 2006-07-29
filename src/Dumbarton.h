@@ -30,6 +30,7 @@
 //representaation subclasses
 //System
 #import "DBArray.h"
+#import "DBConvert.h"
 //System.IO
 #import "DBFileInfo.h"
 //System.Collections

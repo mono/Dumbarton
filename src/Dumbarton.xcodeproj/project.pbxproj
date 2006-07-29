@@ -48,6 +48,8 @@
 		9DB4200B0873614E0045F939 /* DBStringCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DB420090873614E0045F939 /* DBStringCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DB4200C0873614E0045F939 /* DBStringCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB4200A0873614E0045F939 /* DBStringCategory.m */; };
 		9DC576B108CF65C900897270 /* Judy.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DC576B008CF65C900897270 /* Judy.h */; };
+		9DCD135D0A7ABFB900849E5C /* DBConvert.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DCD135B0A7ABFB900849E5C /* DBConvert.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9DCD135E0A7ABFB900849E5C /* DBConvert.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DCD135C0A7ABFB900849E5C /* DBConvert.m */; };
 		9DF2367B0874E3CC008A199C /* DBDataCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DF236790874E3CC008A199C /* DBDataCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DF2367C0874E3CC008A199C /* DBDataCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DF2367A0874E3CC008A199C /* DBDataCategory.m */; };
 		DA4FDE7E09B38A1F00D16517 /* DBSize.h in Headers */ = {isa = PBXBuildFile; fileRef = DA4FDE7C09B38A1F00D16517 /* DBSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -116,6 +118,8 @@
 		9DB420090873614E0045F939 /* DBStringCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBStringCategory.h; sourceTree = "<group>"; };
 		9DB4200A0873614E0045F939 /* DBStringCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBStringCategory.m; sourceTree = "<group>"; };
 		9DC576B008CF65C900897270 /* Judy.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = Judy.h; path = Judy/src/Judy.h; sourceTree = "<group>"; };
+		9DCD135B0A7ABFB900849E5C /* DBConvert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBConvert.h; sourceTree = "<group>"; };
+		9DCD135C0A7ABFB900849E5C /* DBConvert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBConvert.m; sourceTree = "<group>"; };
 		9DF236790874E3CC008A199C /* DBDataCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBDataCategory.h; sourceTree = "<group>"; };
 		9DF2367A0874E3CC008A199C /* DBDataCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBDataCategory.m; sourceTree = "<group>"; };
 		DA4FDE7C09B38A1F00D16517 /* DBSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBSize.h; path = Image/DBSize.h; sourceTree = "<group>"; };
@@ -304,6 +308,8 @@
 			children = (
 				9DA8F08B09EF2BDF000EE2DE /* DBArray.h */,
 				9DA8F08C09EF2BDF000EE2DE /* DBArray.m */,
+				9DCD135B0A7ABFB900849E5C /* DBConvert.h */,
+				9DCD135C0A7ABFB900849E5C /* DBConvert.m */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 				DA4FDE7E09B38A1F00D16517 /* DBSize.h in Headers */,
 				9DA8F08D09EF2BDF000EE2DE /* DBArray.h in Headers */,
 				9DA75F670A239104008EC2F7 /* DBArrayCategory.h in Headers */,
+				9DCD135D0A7ABFB900849E5C /* DBConvert.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +481,7 @@
 				DA4FDE7F09B38A1F00D16517 /* DBSize.m in Sources */,
 				9DA8F08E09EF2BE0000EE2DE /* DBArray.m in Sources */,
 				9DA75F680A239104008EC2F7 /* DBArrayCategory.m in Sources */,
+				9DCD135E0A7ABFB900849E5C /* DBConvert.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,7 +551,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_FAST_OBJC_DISPATCH = YES;
 				GCC_MODEL_TUNING = "";
-				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_UNROLL_LOOPS = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_CFLAGS = (
@@ -586,7 +594,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_FAST_OBJC_DISPATCH = YES;
 				GCC_MODEL_TUNING = "";
-				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_UNROLL_LOOPS = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_CFLAGS = (
