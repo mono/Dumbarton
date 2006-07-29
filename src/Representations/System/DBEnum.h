@@ -1,8 +1,9 @@
 //
-//  Dumbarton.h
+//  DBEnum.h
 //  Dumbarton
 //
-//  Copyright (C) 2005, 2006 imeem, inc. All rights reserved.
+//  Created by Allan Hsu on 7/28/06.
+//  Copyright 2006 imeem. All rights reserved.
 //
 // This library is free software; you can redistribute it and/or
 // modify it under the terms of the GNU Lesser General Public
@@ -23,26 +24,20 @@
 
 #import "DBMonoIncludes.h"
 
-#import "DBMonoEnvironment.h"
-#import "DBMonoClassRepresentation.h"
-#import "DBMonoObjectRepresentation.h"
+@interface DBEnum : NSObject {
 
-//representaation subclasses
-//System
-#import "DBArray.h"
-#import "DBConvert.h"
-#import "DBEnum.h"
-//System.IO
-#import "DBFileInfo.h"
-//System.Collections
-#import "DBIList.h"
-#import "DBArrayList.h"
-//System.Drawing
-#import "DBSize.h"
+}
 
++ (MonoReflectionType *)monoReflectionType;
 
-//categories
-#import "DBCategories.h"
++ (MonoObject *)monoEnumFromInt8:(int8_t)value;
++ (MonoObject *)monoEnumFromInt16:(int16_t)value;
++ (MonoObject *)monoEnumFromInt32:(int32_t)value;
++ (MonoObject *)monoEnumFromInt64:(int64_t)value;
 
-//utility functions
-#import "DBUtility.h"
++ (MonoObject *)monoEnumFromUInt8:(uint8_t)value;
++ (MonoObject *)monoEnumFromUInt16:(uint16_t)value;
++ (MonoObject *)monoEnumFromUInt32:(uint32_t)value;
++ (MonoObject *)monoEnumFromUInt64:(uint64_t)value;
+
+@end
