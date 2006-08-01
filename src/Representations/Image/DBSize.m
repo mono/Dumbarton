@@ -23,24 +23,7 @@
 #import "DBMonoEnvironment.h"
 #import "DBCategories.h"
 
-static MonoClass *_monoClass = NULL;
-
 @implementation DBSize
-
-+ (void)initialize {
-	if([self class] != [DBSize class])
-		return;
-	
-	_monoClass = [DBMonoEnvironment corlibMonoClassWithName:"System.Image.Size"];
-}
-
-#pragma mark -
-
-+ (MonoClass *)monoClass {
-	return _monoClass;
-}
-
-#pragma mark - 
 
 + (DBSize *)sizeWithMonoObject:(MonoObject *)monoObject {
 	DBSize *size = [[[self class] alloc] initWithMonoObject:monoObject];
