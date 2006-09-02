@@ -222,7 +222,7 @@ inline static void SetCachedMonoMethod(MonoMethod *method, MonoClass *monoClass,
 	*valuePointer = (Word_t)nameToMethodsArray;
 }
 
-static MonoMethod *GetMonoMethod(MonoClass *monoClass, const char *methodName, int numArgs) {
+static MonoMethod *GetMonoClassMethod(MonoClass *monoClass, const char *methodName) {
 	MonoMethod *meth;
 	
 	pthread_mutex_lock(&methodCacheMutex);
@@ -233,29 +233,24 @@ static MonoMethod *GetMonoMethod(MonoClass *monoClass, const char *methodName, i
 		MonoClass *klass = monoClass;
 		MonoMethodDesc *methodDesc = NULL;
 		char *rewrittenMethodName = NULL;
-		if (strchr(methodName, ':') != NULL)
-		{
+		
+		if (strchr(methodName, ':') != NULL) {
 			methodDesc = mono_method_desc_new(methodName, YES);
-		}
-		else
-		{
+		} else {
 			rewrittenMethodName = malloc(strlen(methodName) + 2);
 			rewrittenMethodName[0] = ':';
 			strcpy(rewrittenMethodName + 1, methodName);
 			methodDesc = mono_method_desc_new(rewrittenMethodName, YES);
 		}
 		
-		while (klass != NULL)
-		{
+		while(klass != NULL) {
 			meth = mono_method_desc_search_in_class(methodDesc, klass);
 						 
 			if(meth != NULL) {
-				//MonoMethodSignature *methSig = mono_method_signature(meth);
-				//char *sig = mono_signature_get_desc(methSig, NO);
-				//NSLog(@"Signature found: %s(%s)", mono_method_get_name(meth), sig);
 				SetCachedMonoMethod(meth, monoClass, methodName);
 				break;
 			}
+			
 			klass = mono_class_get_parent(klass);
 		}
 		
@@ -270,6 +265,53 @@ static MonoMethod *GetMonoMethod(MonoClass *monoClass, const char *methodName, i
 		@throw([NSException exceptionWithName:@"DBMethodNotFound" reason:[NSString stringWithFormat:@"Dumbarton could not find the method %s", methodName] userInfo:nil]);
 
 	return(meth);
+}
+
+static MonoMethod *GetMonoObjectMethod(MonoObject *monoObject, const char *methodName) {
+	MonoClass *monoClass = mono_object_get_class(monoObject);
+	MonoMethod *meth;
+	
+	pthread_mutex_lock(&methodCacheMutex);
+	
+	meth = GetCachedMonoMethod(monoClass, methodName);
+	
+	if(meth == NULL) {
+		MonoClass *klass = monoClass;
+		MonoMethodDesc *methodDesc = NULL;
+		char *rewrittenMethodName = NULL;
+		
+		if (strchr(methodName, ':') != NULL) {
+			methodDesc = mono_method_desc_new(methodName, YES);
+		} else {
+			rewrittenMethodName = malloc(strlen(methodName) + 2);
+			rewrittenMethodName[0] = ':';
+			strcpy(rewrittenMethodName + 1, methodName);
+			methodDesc = mono_method_desc_new(rewrittenMethodName, YES);
+		}
+		
+		while(klass != NULL) {
+			meth = mono_method_desc_search_in_class(methodDesc, klass);
+			
+			if(meth != NULL) {
+				meth = mono_object_get_virtual_method(monoObject, meth);
+				SetCachedMonoMethod(meth, monoClass, methodName);
+				break;
+			}
+			
+			klass = mono_class_get_parent(klass);
+		}
+		
+		mono_method_desc_free(methodDesc);
+		if (rewrittenMethodName != NULL)
+			free(rewrittenMethodName);
+	}
+	
+	pthread_mutex_unlock(&methodCacheMutex);
+	
+	if(meth == NULL)
+		@throw([NSException exceptionWithName:@"DBMethodNotFound" reason:[NSString stringWithFormat:@"Dumbarton could not find the method %s", methodName] userInfo:nil]);
+	
+	return(meth);	
 }
 
 inline static void SetPropertySetMethod(MonoClass *monoClass, const char *propertyName, MonoMethod *method) {
@@ -304,7 +346,7 @@ inline static MonoMethod *GetPropertySetMethod(MonoClass *monoClass, const char 
 		//meth = mono_property_get_set_method(monoProperty);
 		char *methodName = malloc(strlen(propertyName) + 6); // + "get_"
 		sprintf(methodName, ":set_%s", propertyName);
-		meth = GetMonoMethod(monoClass, methodName, 1);
+		meth = GetMonoClassMethod(monoClass, methodName);
 		free(methodName);
 
 		SetPropertySetMethod(monoClass, propertyName, meth);
@@ -348,7 +390,7 @@ inline static MonoMethod *GetPropertyGetMethod(MonoClass *monoClass, const char 
 //		meth = mono_property_get_get_method(monoProperty);
 		char *methodName = malloc(strlen(propertyName) + 6); // + "get_"
 		sprintf(methodName, ":get_%s", propertyName);
-		meth = GetMonoMethod(monoClass, methodName, 0);
+		meth = GetMonoClassMethod(monoClass, methodName);
 		free(methodName);
 
 		SetPropertyGetMethod(monoClass, propertyName, meth);
@@ -367,7 +409,7 @@ inline static MonoMethod *GetPropertyGetMethod(MonoClass *monoClass, const char 
 MonoObject *DBMonoClassInvoke(MonoClass *monoClass, const char *methodName, int numArgs, va_list va_args) {
 	MonoObject *monoException = NULL;
 	void **args = DBCreateMethodArgsFromVarArgs(va_args, numArgs);
-	MonoMethod *meth = GetMonoMethod(monoClass, methodName, numArgs);
+	MonoMethod *meth = GetMonoClassMethod(monoClass, methodName);
 		
 	MonoObject *retval = NULL;
 	if (meth != NULL) retval = mono_runtime_invoke(meth, NULL, args, &monoException);
@@ -382,7 +424,7 @@ MonoObject *DBMonoObjectInvoke(MonoObject *monoObject, const char *methodName, i
 	MonoObject *monoException = NULL;
 	void **monoArgs = DBCreateMethodArgsFromVarArgs(va_args, numArgs);	
 	MonoClass *klass = mono_object_get_class(monoObject);
-	MonoMethod *meth = GetMonoMethod(klass, methodName, numArgs);
+	MonoMethod *meth = GetMonoObjectMethod(monoObject, methodName);
 
 	MonoObject *retval = NULL;
 	if(meth != NULL) {
