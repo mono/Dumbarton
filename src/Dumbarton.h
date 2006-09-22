@@ -44,5 +44,8 @@
 //categories
 #import "DBCategories.h"
 
+//wrappers
+#import "DBWrappers.h"
+
 //utility functions
 #import "DBUtility.h"

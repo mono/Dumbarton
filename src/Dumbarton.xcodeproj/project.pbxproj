@@ -23,15 +23,15 @@
 		9D13A6EE08833E74008ACA37 /* DBBoxing.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D13A6EC08833E74008ACA37 /* DBBoxing.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D496B2F09082F6700CD26AF /* DBImageCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D496B2D09082F6700CD26AF /* DBImageCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D496B3009082F6700CD26AF /* DBImageCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D496B2E09082F6700CD26AF /* DBImageCategory.m */; };
-		9D6335AE09750DAD00FB76DF /* DBWrappedData.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D6335AC09750DAD00FB76DF /* DBWrappedData.h */; };
+		9D6335AE09750DAD00FB76DF /* DBWrappedData.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D6335AC09750DAD00FB76DF /* DBWrappedData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D6335AF09750DAD00FB76DF /* DBWrappedData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D6335AD09750DAD00FB76DF /* DBWrappedData.m */; };
 		9D68AF5408EA1569002C7AB0 /* DBDateCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D68AF5208EA1569002C7AB0 /* DBDateCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D68AF5508EA1569002C7AB0 /* DBDateCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D68AF5308EA1569002C7AB0 /* DBDateCategory.m */; };
 		9D69DC4308B1851E008BB787 /* DBMonoEnvironment.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D69DC4108B1851E008BB787 /* DBMonoEnvironment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D69DC4408B1851E008BB787 /* DBMonoEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D69DC4208B1851E008BB787 /* DBMonoEnvironment.m */; };
-		9D8863490974F55500365976 /* DBWrappedString.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8863470974F55500365976 /* DBWrappedString.h */; };
+		9D8863490974F55500365976 /* DBWrappedString.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8863470974F55500365976 /* DBWrappedString.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D88634A0974F55500365976 /* DBWrappedString.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8863480974F55500365976 /* DBWrappedString.m */; };
-		9D88636A0974F59A00365976 /* DBWrappers.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8863680974F59A00365976 /* DBWrappers.h */; };
+		9D88636A0974F59A00365976 /* DBWrappers.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8863680974F59A00365976 /* DBWrappers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D8A17D6096A4085000477C0 /* DBFileInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8A17D4096A4085000477C0 /* DBFileInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9D8A17D7096A4085000477C0 /* DBFileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A17D5096A4085000477C0 /* DBFileInfo.m */; };
 		9D8BE8210885A57600D019A5 /* DBIList.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D8BE81F0885A57600D019A5 /* DBIList.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -559,7 +559,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_FAST_OBJC_DISPATCH = YES;
 				GCC_MODEL_TUNING = "";
-				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_UNROLL_LOOPS = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_CFLAGS = (
@@ -602,7 +602,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_FAST_OBJC_DISPATCH = YES;
 				GCC_MODEL_TUNING = "";
-				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_UNROLL_LOOPS = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
 				OTHER_CFLAGS = (
