@@ -25,19 +25,13 @@
 #import "DBInvoke.h"
 #import "DBCategories.h"
 
-inline static void **DBCreateMethodArgsFromVarArgs(va_list va_args, int numArgs) {
-	void **monoArgs = NULL;
-	
+inline static void DBPopulateMethodArgsFromVarArgs(void **args, va_list va_args, int numArgs) {
 	if(numArgs > 0) {
-		monoArgs = malloc(numArgs * sizeof(void *));
 		int i;
 		for(i = 0; i < numArgs; i++) {
-			void *arg = va_arg(va_args, void *);
-			monoArgs[i] = arg;
+			args[i] = va_arg(va_args, void *);
 		}
 	}
-	
-	return(monoArgs);	
 }
 
 static NSException *NSExceptionFromMonoException(MonoObject *monoException) {
@@ -408,13 +402,16 @@ inline static MonoMethod *GetPropertyGetMethod(MonoClass *monoClass, const char 
 
 MonoObject *DBMonoClassInvoke(MonoClass *monoClass, const char *methodName, int numArgs, va_list va_args) {
 	MonoObject *monoException = NULL;
-	void **args = DBCreateMethodArgsFromVarArgs(va_args, numArgs);
-	MonoMethod *meth = GetMonoClassMethod(monoClass, methodName);
-		
 	MonoObject *retval = NULL;
-	if (meth != NULL) retval = mono_runtime_invoke(meth, NULL, args, &monoException);
-		
-	if(args != NULL) free(args);
+	MonoMethod *meth = GetMonoClassMethod(monoClass, methodName);
+	
+	if (meth != NULL) {
+		void *monoArgs[numArgs];
+		DBPopulateMethodArgsFromVarArgs(monoArgs, va_args, numArgs);
+
+		retval = mono_runtime_invoke(meth, NULL, monoArgs, &monoException);
+	}
+	
 	if(monoException != NULL) @throw(NSExceptionFromMonoException(monoException));
 	
 	return(retval);	
@@ -422,17 +419,18 @@ MonoObject *DBMonoClassInvoke(MonoClass *monoClass, const char *methodName, int 
 
 MonoObject *DBMonoObjectInvoke(MonoObject *monoObject, const char *methodName, int numArgs, va_list va_args) {
 	MonoObject *monoException = NULL;
-	void **monoArgs = DBCreateMethodArgsFromVarArgs(va_args, numArgs);	
+	MonoObject *retval = NULL;
 	MonoClass *klass = mono_object_get_class(monoObject);
 	MonoMethod *meth = GetMonoObjectMethod(monoObject, methodName);
 
-	MonoObject *retval = NULL;
 	if(meth != NULL) {
 		void *invokeObj = mono_class_is_valuetype(klass) ? mono_object_unbox(monoObject) : monoObject;
+		void *monoArgs[numArgs];
+		DBPopulateMethodArgsFromVarArgs(monoArgs, va_args, numArgs);
+		
 		retval = mono_runtime_invoke(meth, invokeObj, monoArgs, &monoException);
 	}
 	
-	if(monoArgs != NULL) free(monoArgs);
 	if(monoException != NULL) @throw(NSExceptionFromMonoException(monoException));
 	
 	return(retval);	
