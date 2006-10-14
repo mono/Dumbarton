@@ -29,16 +29,6 @@
 	DBWrappedString *wrappedString = [[DBWrappedString alloc] initWithMonoString:monoString];
 	
 	return([wrappedString autorelease]);
-
-	/*
-	if(monoString == NULL) return(nil);
-	
-	int32_t gcHandle = mono_gchandle_new((MonoObject *)monoString,YES);
-	NSString *string = [NSString stringWithCharacters:mono_string_chars(monoString) length:mono_string_length(monoString)];
-	mono_gchandle_free(gcHandle);
-
-	return(string);
-	 */
 }
 
 - (id)initWithMonoString:(MonoString *)monoString {
@@ -48,19 +38,6 @@
 	}
 	
 	return(self);
-
-	/*
-	if(monoString == NULL) {
-		[self release];
-		self = nil;
-	} else {
-		int32_t gcHandle = mono_gchandle_new((MonoObject *)monoString, YES);
-		self = [self initWithCharacters:mono_string_chars(monoString) length:mono_string_length(monoString)];
-		mono_gchandle_free(gcHandle);
-	}
-	
-	return(self);
-	 */
 }
 
 #pragma mark -

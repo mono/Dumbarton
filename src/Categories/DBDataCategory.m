@@ -29,12 +29,7 @@
 
 	DBWrappedData *wrappedData = [[DBWrappedData alloc] initWithMonoArray:monoArray];
 	
-	return([wrappedData autorelease]);
-	
-	/*
-	NSData *newData = [[NSData alloc] initWithMonoArray:monoArray];
-	return([newData autorelease]);
-	 */
+	return([wrappedData autorelease]);	
 }
 
 - (id)initWithMonoArray:(MonoArray *)monoArray {
@@ -43,21 +38,7 @@
 		self = [[DBWrappedData alloc] initWithMonoArray:monoArray];
 	}
 	
-	return(self);
-	
-	/*
-	if(monoArray != NULL) {
-		int32_t gcHandle = mono_gchandle_new((MonoObject *)monoArray, YES);
-		MonoClass *arrayClass = mono_object_get_class((MonoObject *)monoArray);
-		self = [self initWithBytes:monoArray->vector length:mono_array_length(monoArray) * mono_array_element_size(arrayClass)];
-		mono_gchandle_free(gcHandle);
-	} else {
-		[self release];
-		return(nil);
-	}
-	
-	return(self);
-	 */
+	return(self);	
 }
 
 - (MonoArray *)monoArray {
