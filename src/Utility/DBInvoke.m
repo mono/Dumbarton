@@ -40,10 +40,8 @@ static NSException *NSExceptionFromMonoException(MonoObject *monoException) {
 	return([NSException exceptionWithName:exceptionMessage reason:exceptionStackTrace userInfo:nil]);
 }
 
-//
-// Cache Control
-//
-#pragma mark - Cache Control
+#pragma mark -
+#pragma mark Cache Control
 
 static pthread_mutex_t methodCacheMutex = PTHREAD_MUTEX_INITIALIZER;
 static pthread_mutex_t propertyGetCacheMutex = PTHREAD_MUTEX_INITIALIZER;
@@ -52,6 +50,8 @@ static pthread_mutex_t propertySetCacheMutex = PTHREAD_MUTEX_INITIALIZER;
 static Pvoid_t methodCache = NULL; //JudySL arrays keyed on MonoClass *s
 static Pvoid_t propertyGetMethodCache = NULL;
 static Pvoid_t propertySetMethodCache = NULL;
+
+#ifdef DEBUG
 
 void DBInvokeLogCache(BOOL freeContents) {
 	int itemCount = 0;
@@ -187,6 +187,8 @@ void DBInvokeLogCache(BOOL freeContents) {
 	NSLog(@"Goodbye Judy.");
 }
 
+#endif
+
 inline static MonoMethod *GetCachedMonoMethod(MonoClass *monoClass, const char *methodName) {
 	Pvoid_t nameToMethodsArray = NULL;
 	MonoMethod *meth = NULL;
@@ -226,12 +228,11 @@ static MonoMethod *GetMonoClassMethod(MonoClass *monoClass, const char *methodNa
 	if(meth == NULL) {
 		MonoClass *klass = monoClass;
 		MonoMethodDesc *methodDesc = NULL;
-		char *rewrittenMethodName = NULL;
 		
 		if (strchr(methodName, ':') != NULL) {
 			methodDesc = mono_method_desc_new(methodName, YES);
 		} else {
-			rewrittenMethodName = malloc(strlen(methodName) + 2);
+			char rewrittenMethodName[strlen(methodName) + 2];
 			rewrittenMethodName[0] = ':';
 			strcpy(rewrittenMethodName + 1, methodName);
 			methodDesc = mono_method_desc_new(rewrittenMethodName, YES);
@@ -249,8 +250,6 @@ static MonoMethod *GetMonoClassMethod(MonoClass *monoClass, const char *methodNa
 		}
 		
 		mono_method_desc_free(methodDesc);
-		if (rewrittenMethodName != NULL)
-			free(rewrittenMethodName);
 	}
 	
 	pthread_mutex_unlock(&methodCacheMutex);
@@ -272,12 +271,11 @@ static MonoMethod *GetMonoObjectMethod(MonoObject *monoObject, const char *metho
 	if(meth == NULL) {
 		MonoClass *klass = monoClass;
 		MonoMethodDesc *methodDesc = NULL;
-		char *rewrittenMethodName = NULL;
 		
 		if (strchr(methodName, ':') != NULL) {
 			methodDesc = mono_method_desc_new(methodName, YES);
 		} else {
-			rewrittenMethodName = malloc(strlen(methodName) + 2);
+			char rewrittenMethodName[strlen(methodName) + 2];
 			rewrittenMethodName[0] = ':';
 			strcpy(rewrittenMethodName + 1, methodName);
 			methodDesc = mono_method_desc_new(rewrittenMethodName, YES);
@@ -296,8 +294,6 @@ static MonoMethod *GetMonoObjectMethod(MonoObject *monoObject, const char *metho
 		}
 		
 		mono_method_desc_free(methodDesc);
-		if (rewrittenMethodName != NULL)
-			free(rewrittenMethodName);
 	}
 	
 	pthread_mutex_unlock(&methodCacheMutex);
@@ -338,10 +334,9 @@ inline static MonoMethod *GetPropertySetMethod(MonoClass *monoClass, const char 
 	if(meth == NULL) {
 		//MonoProperty *monoProperty = mono_class_get_property_from_name(monoClass, propertyName);
 		//meth = mono_property_get_set_method(monoProperty);
-		char *methodName = malloc(strlen(propertyName) + 6); // + "get_"
+		char methodName[strlen(propertyName) + 6]; // + "set_"
 		sprintf(methodName, ":set_%s", propertyName);
 		meth = GetMonoClassMethod(monoClass, methodName);
-		free(methodName);
 
 		SetPropertySetMethod(monoClass, propertyName, meth);
 	}
@@ -382,10 +377,9 @@ inline static MonoMethod *GetPropertyGetMethod(MonoClass *monoClass, const char 
 	if(meth == NULL) {
 //		MonoProperty *monoProperty = mono_class_get_property_from_name(monoClass, propertyName);
 //		meth = mono_property_get_get_method(monoProperty);
-		char *methodName = malloc(strlen(propertyName) + 6); // + "get_"
+		char methodName[strlen(propertyName) + 6]; // + "get_"
 		sprintf(methodName, ":get_%s", propertyName);
 		meth = GetMonoClassMethod(monoClass, methodName);
-		free(methodName);
 
 		SetPropertyGetMethod(monoClass, propertyName, meth);
 	}
@@ -395,10 +389,8 @@ inline static MonoMethod *GetPropertyGetMethod(MonoClass *monoClass, const char 
 	return(meth);
 }
 
-//
-// Method Invocation
-//
-#pragma mark - Method Invocation
+#pragma mark -
+#pragma mark Method Invocation
 
 MonoObject *DBMonoClassInvoke(MonoClass *monoClass, const char *methodName, int numArgs, va_list va_args) {
 	MonoObject *monoException = NULL;
@@ -436,10 +428,9 @@ MonoObject *DBMonoObjectInvoke(MonoObject *monoObject, const char *methodName, i
 	return(retval);	
 }
 
-//
-// Property Access
-//
-#pragma mark - Property Access
+#pragma mark -
+#pragma mark Property Access
+
 MonoObject *DBMonoObjectGetProperty(MonoObject *monoObject, const char *propertyName) {
 	MonoObject *monoException = NULL;
 	MonoClass *klass = mono_object_get_class(monoObject);
@@ -525,10 +516,9 @@ void DBMonoClassSetField(MonoClass *monoClass, const char *fieldName, MonoObject
 	mono_field_static_set_value(vtable, field, valueObject);
 }
 
-//
-// Indexer Access
-//
-#pragma mark - Indexer Access
+#pragma mark -
+#pragma mark Indexer Access
+
 MonoObject *DBMonoObjectGetIndexedObject(MonoObject *monoObject, void *indexObject) {
 	MonoObject *monoException = NULL;
 	MonoClass *klass = mono_object_get_class(monoObject);
@@ -563,10 +553,9 @@ void DBMonoObjectSetIndexedObject(MonoObject *monoObject, void *indexObject, Mon
 	if(monoException != NULL) @throw(NSExceptionFromMonoException(monoException));
 }
 
-//
-// Constructor Access
-//
-#pragma mark - Constructor Access
+#pragma mark -
+#pragma mark Constructor Access
+
 MonoObject *DBMonoObjectConstruct(MonoClass *monoClass, int numArgs, ...) {
 	MonoObject *newObject = mono_object_new(mono_domain_get(), monoClass);
 	if(newObject != NULL) {
