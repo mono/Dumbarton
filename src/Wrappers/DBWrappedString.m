@@ -33,7 +33,7 @@
 			[self release];
 			self = nil;
 		} else {
-			_gcHandle = mono_gchandle_new((MonoObject *)monoString, NO);
+			_gcHandle = mono_gchandle_new((MonoObject *)monoString, FALSE);
 			_stringLength = mono_string_length(monoString);
 		}
 	}
@@ -64,10 +64,8 @@
 	if(index >= _stringLength)
 		@throw([NSException exceptionWithName:NSRangeException reason:@"Character index beyond string bounds." userInfo:nil]);
 
-	guint32 pinHandle = mono_gchandle_new((MonoObject *)_monoString, YES);
 	unichar *stringCharacters = mono_string_chars(_monoString);
 	unichar character = stringCharacters[index];
-	mono_gchandle_free(pinHandle);
 	
 	return(character);
 }
@@ -88,20 +86,16 @@
 }
 
 - (void)getCharacters:(unichar *)buffer {
-	guint32 pinHandle = mono_gchandle_new((MonoObject *)_monoString, YES);
 	unichar *stringCharacters = mono_string_chars(_monoString);
 	memcpy(buffer, stringCharacters, (_stringLength * sizeof(unichar)));
-	mono_gchandle_free(pinHandle);
 }
 
 - (void)getCharacters:(unichar *)buffer range:(NSRange)range {
 	if(range.location + range.length > _stringLength)
 		@throw([NSException exceptionWithName:NSRangeException reason:@"Character range beyond string bounds." userInfo:nil]);
 	
-	guint32 pinHandle = mono_gchandle_new((MonoObject *)_monoString, YES);
 	unichar *stringCharacters = mono_string_chars(_monoString);
 	memcpy(buffer, stringCharacters + range.location, (range.length * sizeof(unichar)));
-	mono_gchandle_free(pinHandle);
 }
 
 @end

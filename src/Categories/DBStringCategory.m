@@ -54,9 +54,7 @@
 - (MonoString *)monoString {
 	MonoString *monoString = mono_string_new_size(mono_domain_get(), [self length]);
 
-	int32_t gcHandle = mono_gchandle_new((MonoObject *)monoString, YES);
 	[self getCharacters:mono_string_chars(monoString)];
-	mono_gchandle_free(gcHandle);
 	
 	return(monoString);	
 }

@@ -33,7 +33,7 @@
 			[self release];
 			self = nil;
 		} else {
-			_gcHandle = mono_gchandle_new((MonoObject *)monoArray, YES);
+			_gcHandle = mono_gchandle_new((MonoObject *)monoArray, FALSE);
 		
 			MonoClass *arrayClass = mono_object_get_class((MonoObject *)monoArray);
 			_dataBytes = monoArray->vector;
