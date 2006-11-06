@@ -561,7 +561,8 @@
 				GCC_MODEL_TUNING = "";
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_UNROLL_LOOPS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_ppc = 10.3;
 				OTHER_CFLAGS = (
 					"-Winvalid-pch",
 					"-DDEBUG",
@@ -573,6 +574,8 @@
 					"-I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include",
 				);
 				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
 					"-L/Library/Frameworks/Mono.framework/Versions/Current/lib",
 					"-lmono",
 					"-lm",
@@ -582,7 +585,8 @@
 					"-lintl",
 					"-liconv",
 				);
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_ppc = /Developer/SDKs/MacOSX10.3.9.sdk;
 				ZERO_LINK = NO;
 			};
 			name = Debug;
@@ -603,7 +607,8 @@
 				GCC_MODEL_TUNING = "";
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_UNROLL_LOOPS = NO;
-				MACOSX_DEPLOYMENT_TARGET = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_ppc = 10.3;
 				OTHER_CFLAGS = (
 					"-Winline",
 					"-DJUDYERROR_NOTEST",
@@ -613,6 +618,8 @@
 					"-I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include",
 				);
 				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
 					"-L/Library/Frameworks/Mono.framework/Versions/Current/lib",
 					"-lmono",
 					"-lm",
@@ -622,7 +629,8 @@
 					"-lintl",
 					"-liconv",
 				);
-				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_ppc = /Developer/SDKs/MacOSX10.3.9.sdk;
 				ZERO_LINK = NO;
 			};
 			name = Release;

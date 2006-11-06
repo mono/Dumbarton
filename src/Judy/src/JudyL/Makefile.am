@@ -17,10 +17,6 @@ libcount_la_CFLAGS = $(AM_CFLAGS) -DNOSMARTJBB -DNOSMARTJBU -DNOSMARTJLB
 libinline_la_SOURCES = j__udyLGet.c
 libinline_la_CFLAGS = $(AM_CFLAGS) -DJUDYGETINLINE
 
-JudyLTables.c: JudyLTablesGen.c
-	$(CC) $(INCLUDES) $(AM_CFLAGS) @CFLAGS@ -o JudyLTablesGen JudyLTablesGen.c; ./JudyLTablesGen 
-
-
 JudyLCascade.c: copies
 
 copies:

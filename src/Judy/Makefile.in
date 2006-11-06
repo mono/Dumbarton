@@ -189,7 +189,7 @@ AUTOMAKE_OPTIONS = foreign
 # test (for libJudy).
 #SUBDIRS = src tool doc test make_includes
 #SUBDIRS = src/JudyCommon src/JudyL src/Judy1 src/JudySL src/JudyHS src/obj
-SUBDIRS = src tool doc test
+SUBDIRS = src
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 

@@ -318,7 +318,7 @@ inline static void SetPropertySetMethod(MonoClass *monoClass, const char *proper
 	*valuePointer = (Word_t)nameToMethodArray;	
 }
 
-inline static MonoMethod *GetPropertySetMethod(MonoClass *monoClass, const char *propertyName) {
+__attribute__((always_inline)) inline static MonoMethod *GetPropertySetMethod(MonoClass *monoClass, const char *propertyName) {
 	Pvoid_t nameToMethodArray = NULL;
 	MonoMethod *meth = NULL;
 	Word_t *valuePointer = NULL;
@@ -361,7 +361,7 @@ inline static void SetPropertyGetMethod(MonoClass *monoClass, const char *proper
 	*valuePointer = (Word_t)nameToMethodArray;
 }
 
-inline static MonoMethod *GetPropertyGetMethod(MonoClass *monoClass, const char *propertyName) {
+__attribute__((always_inline)) inline static MonoMethod *GetPropertyGetMethod(MonoClass *monoClass, const char *propertyName) {
 	Pvoid_t nameToMethodArray = NULL;
 	MonoMethod *meth = NULL;
 	Word_t *valuePointer = NULL;
