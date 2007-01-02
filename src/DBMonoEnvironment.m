@@ -52,6 +52,7 @@ static DBMonoEnvironment *_defaultEnvironment = nil;
 		mono_set_defaults(0, mono_parse_default_optimizations(NULL));	
 		
 		_monoDomain = mono_jit_init(domainName);
+		mono_config_parse(NULL);
 	}
 	
 	return(self);
