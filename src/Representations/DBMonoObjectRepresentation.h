@@ -45,6 +45,8 @@
 - (MonoObject *)monoObject;
 
 //Method Invocation
++ (MonoObject *)invokeClassMethod:(const char *)methodName withNumArgs:(int)numArgs varArgList:(va_list)va_args;
++ (MonoObject *)invokeClassMethod:(const char *)methodName withNumArgs:(int)numArgs, ...;
 - (MonoObject *)invokeMethod:(const char *)methodName withNumArgs:(int)numArgs varArgList:(va_list)va_args;
 - (MonoObject *)invokeMethod:(const char *)methodName withNumArgs:(int)numArgs, ...;
 
@@ -53,10 +55,14 @@
 - (void)setMonoObject:(MonoObject *)valueObject forIndexObject:(void *)indexObject;
 
 //Field Access
++ (void)getClassField:(const char *)fieldName valueObject:(void *)valueObject;
++ (void)setClassField:(const char *)fieldName valueObject:(void *)valueObject;
 - (void)getField:(const char *)fieldName valueObject:(void *)valueObject;
 - (void)setField:(const char *)fieldName valueObject:(void *)valueObject;
 
 //Property Access
++ (MonoObject *)getClassProperty:(const char *)propertyName;
++ (void)setClassProperty:(const char *)propertyName valueObject:(MonoObject *)valueObject;
 - (MonoObject *)getProperty:(const char *)propertyName;
 - (void)setProperty:(const char *)propertyName valueObject:(MonoObject *)valueObject;
 
