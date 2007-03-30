@@ -569,7 +569,7 @@
 					"-Winline",
 					"-DJUDYERROR_NOTEST",
 					"-D_THREAD_SAFE",
-					"-I/Library/Frameworks/Mono.framework/Versions/Current/include",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/include/mono-1.0",
 					"-I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0",
 					"-I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include",
 				);
@@ -613,7 +613,7 @@
 					"-Winline",
 					"-DJUDYERROR_NOTEST",
 					"-D_THREAD_SAFE",
-					"-I/Library/Frameworks/Mono.framework/Versions/Current/include",
+					"-I/Library/Frameworks/Mono.framework/Versions/Current/include/mono-1.0",
 					"-I/Library/Frameworks/Mono.framework/Versions/Current/include/glib-2.0",
 					"-I/Library/Frameworks/Mono.framework/Versions/Current/lib/glib-2.0/include",
 				);
