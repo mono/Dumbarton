@@ -96,12 +96,9 @@ static DBMonoEnvironment *_defaultEnvironment = nil;
 	mono_add_internal_call(callName, callPointer);
 }
 
-- (int)executeAssembly:(MonoAssembly *)assembly prepareThreading:(bool)prepareThreading argCount:(int)argCount arguments:(char *[])args {
+- (int)executeAssembly:(MonoAssembly *)assembly prepareThreading:(BOOL)prepareThreading argCount:(int)argCount arguments:(char *[])args {
 	if(prepareThreading) {
-		//this thread is launched just to force cocoa into multithreaded mode.
-		[NSThread detachNewThreadSelector:@selector(nothingThread:) toTarget:self withObject:nil];
-		//get DBMonoRegisteredThread to pose as NSThread.
-		[DBMonoRegisteredThread poseAsClass:[NSThread class]];
+		[self prepareThreading];
 	}
 		
 	mono_jit_exec(_monoDomain, assembly, argCount, args);
@@ -109,6 +106,13 @@ static DBMonoEnvironment *_defaultEnvironment = nil;
 	mono_jit_cleanup(_monoDomain);
 	
 	return(retVal);
+}
+
+- (void)prepareThreading {
+	//this thread is launched just to force cocoa into multithreaded mode.
+	[NSThread detachNewThreadSelector:@selector(nothingThread:) toTarget:self withObject:nil];
+	//get DBMonoRegisteredThread to pose as NSThread.
+	[DBMonoRegisteredThread poseAsClass:[NSThread class]];	
 }
 
 //this thread is launched just to force cocoa into multithreaded mode.

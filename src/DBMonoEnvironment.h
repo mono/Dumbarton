@@ -47,6 +47,8 @@
 - (void)mapDLL:(const char *)dllName dllPath:(NSString *)dllPath;
 - (void)registerInternalCall:(const char *)callName callPointer:(const void *)callPointer;
 
-- (int)executeAssembly:(MonoAssembly *)assembly prepareThreading:(bool)prepareThreading argCount:(int)argCount arguments:(char *[])args;
+- (int)executeAssembly:(MonoAssembly *)assembly prepareThreading:(BOOL)prepareThreading argCount:(int)argCount arguments:(char *[])args;
+
+- (void)prepareThreading;
 
 @end
